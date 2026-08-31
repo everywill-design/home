@@ -1,0 +1,452 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   友だち紹介キャンペーン（自宅deトリイク）friend.html 専用スタイル
+   - style.css の後に読み込む前提（:root のトークンをそのまま利用）
+   - style.css と同じく PC をベース、@media (max-width: 1099px) で SP に落とす
+   ========================================================================== */
+
+.friend {
+  padding: 5rem 1.25rem 7.5rem;
+  background: #fff;
+}
+
+.friend__inner {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+/* 見出し・リード ---------------------------------------------------------- */
+.friend__title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.friend__title .marker {
+  padding: 0 0.25rem;
+  background: linear-gradient(transparent 55%, rgba(253, 198, 1, 0.5) 55%);
+}
+
+.friend__lead {
+  max-width: 40rem;
+  margin: 1.5rem auto 0;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* 特典カード -------------------------------------------------------------- */
+.friend__rewards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.125rem;
+}
+
+.friend__reward {
+  padding: 2.5rem 1.75rem;
+  background: #fff;
+  border: 0.25rem solid var(--color-border);
+  border-radius: 1.25rem;
+  text-align: center;
+}
+
+.friend__reward--main {
+  background: var(--color-bg);
+  border-color: var(--color-key);
+}
+
+.friend__reward-role {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.friend__reward-point {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: 0.75rem;
+}
+
+.friend__reward-num {
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: var(--color-key);
+}
+
+.friend__reward-unit {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-key);
+}
+
+.friend__reward-cond {
+  margin-top: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+  text-align: left;
+}
+
+/* 付与条件の補足ボックス --------------------------------------------------- */
+.friend__note {
+  margin-top: 1.5rem;
+  padding: 1.5rem 1.75rem;
+  background: var(--color-bg);
+  border-radius: 0.9375rem;
+}
+
+.friend__note-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.friend__note-text {
+  margin-top: 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+/* セクション -------------------------------------------------------------- */
+.friend__section {
+  margin-top: 5rem;
+}
+
+.friend__section-title {
+  padding-bottom: 0.875rem;
+  border-bottom: 0.1875rem solid var(--color-text);
+  font-size: 1.75rem;
+  font-weight: 900;
+}
+
+/* 参加方法（ステップ） ----------------------------------------------------- */
+.friend__steps {
+  margin-top: 2.5rem;
+}
+
+.friend__step {
+  padding: 2.25rem 0;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.friend__step:first-child {
+  padding-top: 0;
+}
+
+.friend__step:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.friend__step-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.friend__step-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.75rem;
+  height: 1.875rem;
+  padding: 0 0.875rem;
+  background: var(--color-text);
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--font-en);
+  font-weight: 900;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+}
+
+.friend__step-title {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.friend__step-desc {
+  margin-top: 0.875rem;
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.friend__step-desc .em {
+  font-weight: 700;
+}
+
+.friend__step-desc .accent {
+  color: var(--color-key);
+  font-weight: 700;
+}
+
+/* 画面キャプチャ ---------------------------------------------------------- */
+.friend__gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.friend__gallery-box {
+  padding: 1.75rem 1.5rem;
+  background: var(--color-bg);
+  border-radius: 1.25rem;
+}
+
+.friend__gallery-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.friend__gallery-img {
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+  height: auto;
+  margin: 1.25rem auto;
+  border-radius: 0.75rem;
+}
+
+.friend__gallery-note {
+  padding: 1rem 1.125rem;
+  background: #fff;
+  border-radius: 0.625rem;
+  font-size: 0.875rem;
+  line-height: 1.85;
+}
+
+/* 注意事項 ---------------------------------------------------------------- */
+.friend__terms {
+  margin-top: 2.5rem;
+  padding: 1.875rem 2.125rem;
+  background: var(--color-bg);
+  border-radius: 1.25rem;
+}
+
+.friend__terms li {
+  position: relative;
+  padding-left: 1.125rem;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+}
+
+.friend__terms li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.85em;
+  width: 0.375rem;
+  height: 0.375rem;
+  background: var(--color-key);
+  border-radius: 50%;
+}
+
+.friend__terms li + li {
+  margin-top: 0.75rem;
+}
+
+/* 戻り導線 ---------------------------------------------------------------- */
+.friend__back {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.friend__back a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17.5rem;
+  height: 3.75rem;
+  padding: 0 2rem;
+  background: var(--color-yellow);
+  border-radius: 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 900;
+  transition: opacity 0.3s;
+}
+
+.friend__back a:hover {
+  opacity: 0.85;
+}
+
+.friend__back a:focus-visible {
+  outline: 3px solid var(--color-key);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   レスポンシブ（SP / タブレット：style.css と同じ 1099px でブレイク）
+   ========================================================================== */
+@media (max-width: 1099px) {
+  .friend {
+    padding: 2.5rem 0.9375rem 3.75rem;
+  }
+
+  .friend__title {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .friend__lead {
+    margin-top: 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.85;
+    text-align: left;
+  }
+
+  /* 特典カード */
+  .friend__rewards {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 1.875rem;
+  }
+
+  .friend__reward {
+    padding: 1.5rem 1.125rem;
+    border-width: 0.1875rem;
+    border-radius: 0.9375rem;
+  }
+
+  .friend__reward-role {
+    font-size: 0.9375rem;
+  }
+
+  .friend__reward-num {
+    font-size: 3.25rem;
+  }
+
+  .friend__reward-unit {
+    font-size: 1rem;
+  }
+
+  .friend__reward-cond {
+    margin-top: 0.875rem;
+    font-size: 0.8125rem;
+    line-height: 1.8;
+  }
+
+  /* 補足ボックス */
+  .friend__note {
+    margin-top: 1rem;
+    padding: 1.125rem 1.25rem;
+    border-radius: 0.75rem;
+  }
+
+  .friend__note-title {
+    font-size: 0.9375rem;
+  }
+
+  .friend__note-text {
+    font-size: 0.8125rem;
+    line-height: 1.8;
+  }
+
+  /* セクション */
+  .friend__section {
+    margin-top: 3.125rem;
+  }
+
+  .friend__section-title {
+    padding-bottom: 0.625rem;
+    border-bottom-width: 0.125rem;
+    font-size: 1.1875rem;
+  }
+
+  /* ステップ */
+  .friend__steps {
+    margin-top: 1.5rem;
+  }
+
+  .friend__step {
+    padding: 1.5rem 0;
+  }
+
+  .friend__step-head {
+    gap: 0.625rem;
+  }
+
+  .friend__step-num {
+    min-width: 3.875rem;
+    height: 1.5rem;
+    padding: 0 0.625rem;
+    font-size: 0.6875rem;
+  }
+
+  .friend__step-title {
+    font-size: 1rem;
+  }
+
+  .friend__step-desc {
+    margin-top: 0.625rem;
+    font-size: 0.875rem;
+    line-height: 1.85;
+  }
+
+  /* キャプチャ */
+  .friend__gallery {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .friend__gallery-box {
+    padding: 1.125rem 1rem;
+    border-radius: 0.9375rem;
+  }
+
+  .friend__gallery-title {
+    font-size: 0.9375rem;
+  }
+
+  .friend__gallery-img {
+    max-width: 15rem;
+    margin: 0.875rem auto;
+  }
+
+  .friend__gallery-note {
+    padding: 0.875rem;
+    font-size: 0.8125rem;
+    line-height: 1.8;
+  }
+
+  /* 注意事項 */
+  .friend__terms {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.125rem;
+    border-radius: 0.9375rem;
+  }
+
+  .friend__terms li {
+    padding-left: 0.9375rem;
+    font-size: 0.8125rem;
+    line-height: 1.85;
+  }
+
+  .friend__terms li::before {
+    width: 0.3125rem;
+    height: 0.3125rem;
+  }
+
+  /* 戻り導線 */
+  .friend__back {
+    margin-top: 2.5rem;
+  }
+
+  .friend__back a {
+    min-width: 0;
+    width: 100%;
+    max-width: 15.625rem;
+    height: 3.125rem;
+    font-size: 1rem;
+  }
+}
