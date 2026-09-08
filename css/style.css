@@ -314,16 +314,27 @@ sup {
   overflow: hidden;
 }
 
-.media__placeholders {
+/* キャンペーンバナー */
+.media__banners {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  padding: 0 1.25rem;
 }
 
-.media__placeholder {
-  width: 25rem;
-  height: 12.5rem;
-  background: #d9d9d9;
+.media__banner {
+  transition: opacity 0.3s;
+}
+
+.media__banner:hover {
+  opacity: 0.85;
+}
+
+.media__banner img {
+  display: block;
+  width: 35rem;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.9375rem;
 }
 
 .media__title {
@@ -1297,15 +1308,13 @@ sup {
     padding: 2.5rem 0 3.75rem;
   }
 
-  .media__placeholders {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.375rem;
+  .media__banners {
+    padding: 0 0.9375rem;
   }
 
-  .media__placeholder {
-    width: 15rem;
-    height: 7.5rem;
+  .media__banner img {
+    width: 100%;
+    border-radius: 0.625rem;
   }
 
   .media__title {

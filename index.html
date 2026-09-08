@@ -25,24 +25,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Zen+Antique&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HXXWY95RTQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HXXWY95RTQ');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "yawcgcd24y");
-  </script>
 </head>
 <body>
 <div class="device">
@@ -96,12 +78,11 @@
 
     <!-- メディア掲載・採択実績 -->
     <section class="media">
-      <!-- TODO: バナー画像が確定したら差し替えて復活
-      <div class="media__placeholders">
-        <div class="media__placeholder"></div>
-        <div class="media__placeholder"></div>
+      <div class="media__banners">
+        <a href="https://toriiku-cp.com/" target="_blank" rel="noopener" class="media__banner">
+          <img src="img/banner-cp.webp" alt="リリース記念キャンペーン 「自宅deトリイク」で送り状を撮影してポイントGET！ 上位100名様に最大2,000pt 期間：2026年9月7日〜9月30日まで" width="560" height="280">
+        </a>
       </div>
-      -->
 
       <h2 class="media__title">トリイクの<br class="sp-only">メディア掲載・採択実績</h2>
       <p class="media__lead">国土交通省の実証事業にも採択。<br class="sp-only">物流の人手不足解消に向けた取り組みとして<br class="sp-only">注目されています。</p>
@@ -351,7 +332,7 @@
             <div class="faq-item__a">
               <div class="faq-item__a-inner">
                 <span class="faq-item__mark faq-item__mark--a">A.</span>
-                <p>書状・はがき・小包などの「郵便物」は対象外です。<br>ポスト投函の「宅配便（ネコポスなど）荷物」で伝票が貼付されているものであれば、ご提出いただけます。<br>（伝票（送り状・宛名ラベル）がお手元に残らないものも、対象外です。）</p>
+                <p>伝票がお手元に残らないもの（メール便・ポスト投函など）は対象外となります。</p>
               </div>
             </div>
           </div>
@@ -391,7 +372,6 @@
               <div class="faq-item__a-inner">
                 <span class="faq-item__mark faq-item__mark--a">A.</span>
                 <p>日本国内の主要なポイント・ギフト券に交換できます。詳細は会員登録後のポイント画面でご確認できます。</p>
-                <p class="faq-item__link"><a href="https://toriiku-jp.com/home/home_point.html">ポイントの詳細はこちら</a></p>
               </div>
             </div>
           </div>
@@ -405,7 +385,6 @@
               <div class="faq-item__a-inner">
                 <span class="faq-item__mark faq-item__mark--a">A.</span>
                 <p>ご利用受付から原則72時間以内に確定します。</p>
-                <p class="faq-item__link"><a href="https://toriiku-jp.com/home/home_point.html">ポイントの詳細はこちら</a></p>
               </div>
             </div>
           </div>
@@ -467,9 +446,8 @@
       <p class="footer__copy">&copy; Every WiLL Inc.</p>
       <ul class="footer__links">
         <li><a href="https://everywill-jp.com/" target="_blank" rel="noopener">運営会社</a></li>
-        <li><a href="https://toriiku-jp.com/terms.html#home" target="_blank" rel="noopener">利用規約</a></li>
+        <li><a href="https://toriiku-jp.com/terms.html" target="_blank" rel="noopener">利用規約</a></li>
         <li><a href="https://everywill-jp.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a></li>
-        <li><a href="https://toriiku-jp.com/index.html" target="_blank" rel="noopener">トリイクスポット</a></li>
         <li><a href="https://everywill-jp.com/contact/" target="_blank" rel="noopener">お問い合わせ</a></li>
       </ul>
     </div>
@@ -477,6 +455,5 @@
 
 </div><!-- /.device -->
   <script src="js/script.js"></script>
-  <script src="js/jitaku-toriiku-chatbot.js" defer></script>
 </body>
 </html>
