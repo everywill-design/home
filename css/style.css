@@ -704,7 +704,7 @@ sup {
    Merit
    ========================================================================== */
 .merit {
-  padding: 5.9375rem 0 7.5rem;
+  padding: 7.5rem 0;
   background: var(--color-bg);
 }
 
@@ -733,7 +733,8 @@ sup {
 }
 
 .merit__cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 36.25rem));
   justify-content: center;
   gap: 2.5rem;
   margin-top: 5.5rem;
@@ -742,7 +743,6 @@ sup {
 
 .merit-card {
   position: relative;
-  flex: 0 1 36.25rem;
   min-width: 0;
   min-height: 28.0625rem;
   padding: 3.125rem 1.25rem 2.5rem;
@@ -754,6 +754,24 @@ sup {
 .merit-card__title {
   font-size: 2rem;
   font-weight: 900;
+}
+
+.merit-card__em {
+  color: var(--color-accent);
+}
+
+.merit-card__tight {
+  letter-spacing: -0.3em;
+}
+
+.merit-card__key {
+  color: var(--color-key);
+}
+
+.merit-card__strong {
+  font-size: 1.875rem;
+  font-weight: 900;
+  color: var(--color-key);
 }
 
 .merit-card__sub {
@@ -782,6 +800,102 @@ sup {
 
 .merit-card__sparkle--flip {
   transform: scaleX(-1);
+}
+
+/* 2行以上のサブテキスト（友だち紹介・ドライバー）: キラキラをカード両端に固定 */
+.merit-card__sub--lines {
+  position: relative;
+  line-height: 1.2;
+}
+
+.merit-card__sub--lines .merit-card__sparkle {
+  position: absolute;
+  top: 50%;
+  left: 1.875rem;
+  transform: translateY(-50%);
+}
+
+.merit-card__sub--lines .merit-card__sparkle--flip {
+  left: auto;
+  right: 1.875rem;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* 友だち紹介・ドライバー（下段）カード */
+.merit-card--friend,
+.merit-card--driver {
+  min-height: 24.3125rem;
+}
+
+.merit-card__visual {
+  margin: 1.625rem auto 0;
+  max-width: 100%;
+}
+
+.merit-card__visual--friend {
+  width: 30rem;
+}
+
+.merit-card__visual--friend img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ドライバーの絵は3パーツを比率固定で重ねる（400×150 基準） */
+.merit-card__visual--driver {
+  position: relative;
+  width: 25rem;
+  aspect-ratio: 400 / 150;
+}
+
+.merit-card__visual--driver img {
+  position: absolute;
+  height: auto;
+}
+
+.merit-card__driver-user {
+  top: 0;
+  left: 0;
+  width: 30.5%;
+}
+
+.merit-card__driver-thanks {
+  top: 13.33%;
+  left: 30.25%;
+  width: 23.5%;
+}
+
+.merit-card__driver-truck {
+  top: 0;
+  left: 59.5%;
+  width: 40.5%;
+}
+
+.merit-card__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  width: 30rem;
+  max-width: 100%;
+  margin: 0.9375rem auto 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: -0.1em;
+  line-height: 1.3;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.merit-card__link:hover {
+  text-decoration: none;
+}
+
+.merit-card__link-icon {
+  width: 0.375rem;
+  height: 0.625rem;
 }
 
 .merit-card__exchange {
@@ -1595,8 +1709,8 @@ sup {
   }
 
   .merit__cards {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: minmax(0, 21.25rem);
+    justify-items: center;
     gap: 1.25rem;
     margin-top: 2.8125rem;
     padding: 0;
@@ -1605,9 +1719,10 @@ sup {
   /* SPでは「荷物が届くたび」カードを先に表示 */
   .merit-card--rank { order: 1; }
   .merit-card--use { order: 2; }
+  .merit-card--friend { order: 3; }
+  .merit-card--driver { order: 4; }
 
   .merit-card {
-    flex: none;
     width: 100%;
     max-width: 21.25rem;
     min-height: 0;
@@ -1641,6 +1756,44 @@ sup {
 
   .merit-card__sparkle {
     width: 2rem;
+  }
+
+  .merit-card__sub--lines {
+    margin-top: 0.9375rem;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+
+  .merit-card__sub--lines .num {
+    font-size: 1.5rem;
+  }
+
+  .merit-card__sub--lines .merit-card__sparkle {
+    left: 0.5rem;
+  }
+
+  .merit-card__sub--lines .merit-card__sparkle--flip {
+    left: auto;
+    right: 0.5rem;
+  }
+
+  .merit-card__strong {
+    font-size: 1.25rem;
+  }
+
+  .merit-card__visual {
+    margin-top: 1.25rem;
+  }
+
+  .merit-card__visual--friend,
+  .merit-card__visual--driver {
+    width: 17.5rem;
+  }
+
+  .merit-card__link {
+    justify-content: center;
+    gap: 0.875rem;
+    margin-top: 1.25rem;
   }
 
   .merit-card__exchange img {
@@ -1856,5 +2009,16 @@ sup {
 
   .merit-card__flow {
     gap: 0.375rem;
+  }
+
+  /* ドライバーカード: キラキラを短い2行目の高さまで下げ、1行目との重なりを避ける */
+  .merit-card--driver .merit-card__sparkle {
+    top: 75%;
+    left: -0.375rem;
+  }
+
+  .merit-card--driver .merit-card__sparkle--flip {
+    left: auto;
+    right: -0.375rem;
   }
 }
