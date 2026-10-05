@@ -1262,6 +1262,42 @@ sup {
   opacity: 0.7;
 }
 
+.footer__company {
+  padding: 2.5rem 7.5rem 0;
+  font-size: 0.875rem;
+  line-height: 1.9;
+  opacity: 0.75;
+}
+
+.footer__company-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.footer__company-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer__company-row dt {
+  flex: 0 0 5rem;
+}
+
+.footer__company-row dd {
+  flex: 1 1 auto;
+  overflow-wrap: anywhere;
+}
+
+.footer__company a {
+  text-decoration: underline;
+  transition: opacity 0.3s;
+}
+
+.footer__company a:hover {
+  opacity: 0.7;
+}
+
 /* ==========================================================================
    レスポンシブ（SP）
    ========================================================================== */
@@ -1996,6 +2032,22 @@ sup {
   .footer__copy,
   .footer__links a {
     font-size: 0.625rem;
+  }
+
+  .footer__company {
+    padding: 1.5rem 0.9375rem 0;
+    font-size: 0.6875rem;
+    line-height: 1.8;
+  }
+
+  .footer__company-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .footer__company-row dt {
+    flex: none;
+    opacity: 0.8;
   }
 }
 
