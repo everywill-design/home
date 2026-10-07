@@ -318,10 +318,15 @@ sup {
 .media__banners {
   display: flex;
   justify-content: center;
+  gap: 1.25rem;
+  max-width: 75rem;
+  margin: 0 auto;
   padding: 0 1.25rem;
 }
 
 .media__banner {
+  flex: 0 1 35rem;
+  min-width: 0;
   transition: opacity 0.3s;
 }
 
@@ -331,8 +336,7 @@ sup {
 
 .media__banner img {
   display: block;
-  width: 35rem;
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 0.9375rem;
 }
@@ -1459,11 +1463,19 @@ sup {
   }
 
   .media__banners {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9375rem;
     padding: 0 0.9375rem;
   }
 
-  .media__banner img {
+  .media__banner {
+    flex: none;
     width: 100%;
+    max-width: 35rem;
+  }
+
+  .media__banner img {
     border-radius: 0.625rem;
   }
 
