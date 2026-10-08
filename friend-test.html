@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="robots" content="index,follow">
+<title>友だち紹介キャンペーン（10/6～10/31限定）｜自宅deトリイク</title>
+<meta name="description" content="【期間限定10/6～10/31】自宅deトリイクを紹介すると、紹介した方に200円分、紹介されたお友だちに100円分。紹介コードを入力した会員登録とメールアドレス認証の完了だけで進呈される友だち紹介キャンペーンの特典内容、参加方法、注意事項をご案内します。">
+<meta name="author" content="株式会社Every WiLL">
+
+<!-- ▼要確認：canonical / og:url は自宅deトリイクの実URLに差し替えてください -->
+<link rel="canonical" href="https://toriiku-jp.com/friend-1001.html">
+<link rel="icon" type="image/webp" href="img/favicon.webp">
+<link rel="apple-touch-icon" href="img/favicon.webp">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="自宅deトリイク">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://toriiku-jp.com/friend-1001.html">
+<meta property="og:title" content="友だち紹介キャンペーン（10/6～10/31限定）｜自宅deトリイク">
+<meta property="og:description" content="紹介した方に200円分、紹介されたお友だちに100円分。会員登録とメールアドレス認証の完了で進呈されます。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- 既存の共通CSS → その後に友だち紹介ページ専用CSS -->
+<link rel="stylesheet" href="css/style.css?v=20261005">
+<link rel="stylesheet" href="css/friend.css">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HXXWY95RTQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HXXWY95RTQ');
+</script>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yr7qcwhder");
+</script>
+
+<style>
+  /* 期間限定キャンペーンの強調スタイル */
+  .campaign-banner {
+    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
+    color: white;
+    padding: 16px 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .campaign-banner span {
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+    font-weight: 500;
+    opacity: 0.95;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
+    }
+    50% {
+      box-shadow: 0 4px 20px rgba(204, 0, 0, 0.4);
+    }
+  }
+
+  .friend__reward-badge {
+    display: inline-block;
+    background: #ff4444;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  /* 報酬カードの強調 */
+  .friend__reward {
+    border: 2px solid #ff4444;
+  }
+
+  /* STEP内の画像 */
+  .friend__step-figure {
+    margin: 20px auto 0;
+    max-width: 320px;
+    text-align: center;
+  }
+  .friend__step-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .friend__step-figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* Hero Section */
+  .friend__hero-section {
+    margin: 48px 0;
+    padding: 32px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .friend__hero-text {
+    flex: 1.2;
+    min-width: 0;
+  }
+
+  .friend__hero-image {
+    flex: 0.8;
+    max-width: 350px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: block;
+  }
+
+  .friend__hero-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #333;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+  }
+
+  .friend__hero-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+    margin: 0 0 8px 0;
+  }
+
+  .friend__hero-badge {
+    display: inline-block;
+    background: #ffe4cc;
+    color: #ea761f;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  /* アンケート情報ボックス */
+  .friend__survey-info {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    padding: 20px;
+    background: #f0f7f1;
+    border-left: 4px solid #2c5f2d;
+    border-radius: 4px;
+  }
+
+  .friend__survey-icon {
+    flex-shrink: 0;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  .friend__survey-content h4 {
+    margin: 0 0 8px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #2c5f2d;
+  }
+
+  .friend__survey-content p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* トリイクとは - セクションタイトル */
+  .friend__intro-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ea761f;
+    margin: 48px 0 32px 0;
+    padding-bottom: 16px;
+    border-bottom: 3px solid #ea761f;
+    text-align: center;
+  }
+
+  /* 王冠（メディア掲載）セクション崩れ防止・調整CSS */
+  .friend__media {
+    margin: 48px 0 32px;
+    text-align: center;
+  }
+  .friend__media .media__title {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .friend__media .media__lead {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+  }
+  /* PC版：横に3つ並べる */
+  .friend__media .media__awards {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+  .media__awards picture {
+    flex: 1 1 0;
+    max-width: 329px;
+  }
+  .media__awards picture img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* マーカー（黄色 / 薄いオレンジ） */
+  .friend__step-title .marker {
+    padding: 0 0.25rem;
+    background: linear-gradient(transparent 55%, rgba(253, 198, 1, 0.5) 55%);
+  }
+  .friend__step-title .marker--orange {
+    padding: 0 0.25rem;
+    background: linear-gradient(transparent 55%, rgba(234, 118, 31, 0.35) 55%);
+  }
+
+  /* 箇条書きのぶら下がりインデント設定（2行目の先頭揃え） */
+  .friend__step-desc li,
+  .friend__indent-text {
+    padding-left: 1em;
+    text-indent: -1em;
+  }
+
+  /* モバイルレスポンシブ */
+  @media (max-width: 768px) {
+    .friend__intro-title {
+      font-size: 24px;
+      margin: 32px 0 24px 0;
+      padding-bottom: 12px;
+    }
+
+    .friend__media {
+      margin: 32px 0 24px;
+    }
+    .friend__media .media__title {
+      font-size: 20px;
+    }
+    .friend__media .media__lead {
+      font-size: 13px;
+    }
+
+    /* 王冠（メディア掲載）スマホ時2列化 */
+    .friend__media .media__awards {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .media__awards picture {
+      flex: none;
+      width: calc(50% - 6px);
+      max-width: none;
+    }
+    .media__awards picture:last-child:nth-child(odd) {
+      margin: 0 auto; /* 3つ目の要素を中央寄せ */
+    }
+
+    .friend__step-figure {
+      max-width: 260px;
+      margin-top: 16px;
+    }
+    .friend__step-figcaption {
+      font-size: 12px;
+    }
+
+    .friend__hero-section {
+      flex-direction: column;
+      padding: 16px;
+      margin: 24px 0;
+      gap: 16px;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .friend__hero-text {
+      order: 1;
+      flex: none;
+    }
+
+    .friend__hero-image {
+      order: 2;
+      flex: none;
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      max-height: 280px;
+      object-fit: contain;
+    }
+
+    .friend__hero-text h2 {
+      font-size: 20px;
+      margin: 0 0 12px 0;
+    }
+
+    .friend__hero-text p {
+      font-size: 14px;
+      margin: 0 0 8px 0;
+    }
+
+    .friend__hero-badge {
+      font-size: 12px;
+      padding: 6px 12px;
+      margin-top: 8px;
+    }
+
+    .friend__survey-info {
+      flex-direction: row;
+      gap: 12px;
+      padding: 16px;
+      margin-top: 24px;
+    }
+
+    .friend__survey-icon {
+      font-size: 20px;
+    }
+
+    .friend__survey-content h4 {
+      font-size: 14px;
+    }
+
+    .friend__survey-content p {
+      font-size: 13px;
+    }
+
+    .friend__cta-section {
+      margin: 32px 0 !important;
+    }
+
+    .friend__back {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .friend__back a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      width: 100%;
+      max-width: 15.625rem;
+      height: 3.125rem;
+      font-size: 1rem;
+      padding: 0;
+      background: var(--color-yellow);
+      border-radius: 2.5rem;
+      font-weight: 900;
+      color: #000;
+      line-height: 1;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  /* リンク可視化 */
+  .friend__hero-text a {
+    text-decoration: underline;
+    color: #0066cc;
+  }
+
+  .friend__hero-text a:hover {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 480px) {
+    .friend__hero-image {
+      max-height: 240px;
+    }
+
+    .friend__hero-section {
+      padding: 12px;
+      gap: 12px;
+    }
+
+    .friend__hero-text h2 {
+      font-size: 18px;
+    }
+
+    .friend__intro-title {
+      font-size: 20px;
+      margin: 24px 0 16px 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="device">
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo" aria-label="自宅deトリイク" target="_blank" rel="noopener">
+        <img src="img/logo.webp" alt="自宅deトリイク" width="336" height="100" loading="eager" decoding="async">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__menu">
+          <li><a href="index.html#steps" target="_blank" rel="noopener">つかいかた</a></li>
+          <li><a href="index.html#merit" target="_blank" rel="noopener">メリット</a></li>
+          <li><a href="index.html#faq" target="_blank" rel="noopener">よくある質問</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#cta" class="header__dl" target="_blank" rel="noopener">アプリをダウンロード</a>
+    </div>
+  </header>
+
+  <main class="friend">
+    <div class="friend__inner">
+
+      <!-- 期間限定バナー：ページ上部に強調表示 -->
+      <div class="campaign-banner">
+        🎉 期間限定キャンペーン実施中
+        <span>10月6日（火）～ 10月31日（土）</span>
+      </div>
+
+      <h1 class="friend__title">友だち<span class="marker">紹介キャンペーン</span></h1>
+
+      <p class="friend__lead">
+        自宅deトリイクを身近な人に紹介する（数十秒）と、紹介したあなたに200円分、紹介されたお友だちに100円分が進呈されます。
+      </p>
+
+      <div class="friend__rewards">
+        <div class="friend__reward friend__reward--main">
+          <div class="friend__reward-badge">期間限定 10/6～10/31</div>
+          <p class="friend__reward-role">紹介したあなたに</p>
+          <p class="friend__reward-point">
+            <span class="friend__reward-num">200</span><span class="friend__reward-unit">円分</span>
+          </p>
+          <p class="friend__reward-cond">紹介されたお友だちが、10月31日（土）までに、会員登録とメールアドレス認証を完了すると進呈されます。</p>
+        </div>
+        <div class="friend__reward">
+          <div class="friend__reward-badge">期間限定 10/6～10/31</div>
+          <p class="friend__reward-role">紹介されたお友だちに</p>
+          <p class="friend__reward-point">
+            <span class="friend__reward-num">100</span><span class="friend__reward-unit">円分</span>
+          </p>
+          <p class="friend__reward-cond">10月31日（土）までに、紹介コードを入力して会員登録し、メールアドレス認証を完了（以下のSTEP 01～02を完了）すると進呈されます。</p>
+        </div>
+      </div>
+
+      <!-- トリイクとは -->
+      <h2 class="friend__intro-title">自宅deトリイクとは</h2>
+
+      <!-- Hero Visual Section -->
+      <div class="friend__hero-section">
+        <div class="friend__hero-text">
+          <h2>自宅で受け取った荷物の伝票、<br>撮るだけでポイントに。</h2>
+          <p>面倒な手続きは一切なし。ネット通販等で購入し受取った荷物の伝票を撮って送るだけで、年間最大8,000円相当のポイントがたまる国内初のサービスです。</p>
+           <a href="https://takuhai-poc.jp/" target="_blank" rel="noopener">令和7～8年度：国土交通省・補助対象事業</a>
+        </div>
+        <img src="img/hero.webp" alt="受け取った伝票、撮るだけでポイントに。" class="friend__hero-image">
+      </div>
+
+      <!-- メディア掲載・採択実績 -->
+      <div class="friend__media">
+        <h2 class="media__title">トリイクの<br class="sp-only">メディア掲載・採択実績</h2>
+        <div class="media__awards">
+          <picture class="award-img award-img--nhk">
+            <source media="(max-width: 1099px)" srcset="img/award-sp-nhk.webp">
+            <img loading="lazy" decoding="async" src="img/award-pc-nhk.webp" alt="NHK おはよう日本・日テレ ZIP! 掲載" width="329" height="120">
+          </picture>
+          <picture class="award-img award-img--mlit">
+            <source media="(max-width: 1099px)" srcset="img/award-sp-mlit.webp">
+            <img loading="lazy" decoding="async" src="img/award-pc-mlit.webp" alt="国土交通省 多様・柔軟な受取・注文方法の普及促進事業 認定" width="329" height="131">
+          </picture>
+          <picture class="award-img award-img--startup">
+            <source media="(max-width: 1099px)" srcset="img/award-sp-startup.webp">
+            <img loading="lazy" decoding="async" src="img/award-pc-startup.webp" alt="スタートアップアワード 最優秀賞 受賞" width="329" height="120">
+          </picture>
+        </div>
+      </div>
+
+      <!-- 詳細ボタン & アプリダウンロードボタン -->
+      <div class="friend__cta-section" style="margin: 48px 0; text-align: center;">
+        <p class="friend__back" style="margin-bottom: 24px;">
+          <a href="https://toriiku-jp.com/home/index.html" target="_blank" rel="noopener">詳細はこちら</a>
+        </p>
+        
+        <div class="friend__app-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://apps.apple.com/app/apple-store/id6785268481?pt=129075299&ct=202609_22&mt=8" target="_blank" rel="noopener">
+            <img src="img/badge-appstore.webp" alt="Download on the App Store" style="height: 40px; display: block;">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.toriiku.app&utm_source=ctd&utm_medium=flyer&utm_campaign=202609_23" target="_blank" rel="noopener">
+            <img src="img/badge-googleplay.webp" alt="Get it on Google Play" style="height: 40px; display: block;">
+          </a>
+        </div>
+      </div>
+
+      <section class="friend__section">
+        <h2 class="friend__section-title">キャンペーン参加方法</h2>
+
+        <div class="friend__steps">
+          <div class="friend__step">
+            <div class="friend__step-head">
+              <span class="friend__step-num">STEP 01</span>
+              <h3 class="friend__step-title">紹介コードをお友だちに送る<br class="sp-only"><span class="marker marker--orange">＜紹介する方＞</span></h3>
+            </div>
+            <ul class="friend__step-desc" style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 8px;">・マイページ内の<span class="em">「紹介コード」</span>から、ご自身の専用コードをコピーしてお友だちにシェアします。</li>
+              <li>・紹介コードの確認方法は以下を参照ください。</li>
+            </ul>
+          </div>
+
+          <div class="friend__step">
+            <div class="friend__step-head">
+              <span class="friend__step-num">STEP 02</span>
+              <h3 class="friend__step-title">会員登録・メールアドレス認証完了<br class="sp-only"><span class="marker">＜紹介されたお友だち＞</span></h3>
+            </div>
+            <ul class="friend__step-desc" style="list-style: none; padding: 0; margin: 0;">
+              <li style="margin-bottom: 8px;">・アプリをダウンロードすると、「トリイクスポット」と「自宅deトリイク」が表示されますので「自宅deトリイク」を選択してください。</li>
+              <li style="margin-bottom: 8px;">・新規会員登録の画面にある<span class="accent">「紹介コード」欄</span>にコードを入力して、登録を進めます。</li>
+              <li style="margin-bottom: 8px;">・ご登録のメールアドレス宛に認証メールが届きますので、<span class="accent">10月31日（土）までにメールアドレス認証を完了</span>してください。</li>
+              <li>・下の画面が表示されれば完了です。</li>
+            </ul>
+            <figure class="friend__step-figure">
+              <img class="friend__step-img" src="img/registration.webp" alt="「メール認証が完了しました」画面" loading="lazy" decoding="async">
+              <figcaption class="friend__step-figcaption">この画面が表示されれば、キャンペーンの条件達成です。</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="friend__section">
+        <h2 class="friend__section-title">紹介コードの確認・入力方法</h2>
+
+        <div class="friend__gallery">
+          <div class="friend__gallery-box">
+            <h3 class="friend__gallery-title">紹介する方：コードの確認</h3>
+            <!-- ▼要差し替え：自宅deトリイク版のキャプチャに置き換えてください -->
+            <img class="friend__gallery-img" src="img/friend01.webp" alt="マイページの紹介コード画面" width="437" height="562" loading="lazy" decoding="async">
+            <p class="friend__gallery-note">マイページ下部の「紹介コード」から、ご自身のコードを確認・コピーできます。</p>
+          </div>
+          <div class="friend__gallery-box">
+            <h3 class="friend__gallery-title">紹介されたお友だち：コードの入力</h3>
+            <!-- ▼要差し替え：自宅deトリイク版のキャプチャに置き換えてください -->
+            <img class="friend__gallery-img" src="img/friend02.webp" alt="新規登録時の紹介コード入力画面" width="438" height="553" loading="lazy" decoding="async">
+            <p class="friend__gallery-note">新規会員登録の画面にある「紹介コード」の項目にコードを入力し、「適用」を押してください。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="friend__section" style="background: linear-gradient(135deg, #f0f7f1 0%, #ffffff 100%); padding: 32px; border-radius: 12px; margin: 48px 0;">
+        <h2 class="friend__section-title" style="color: #2c5f2d; margin-top: 0; border-bottom: none; padding-bottom: 0;">自宅deトリイクはポイントももらえて、社会貢献！</h2>
+        <div style="font-size: 15px; color: #555; line-height: 1.8; margin-top: 16px;">
+          <p class="friend__indent-text" style="margin-bottom: 8px;">・自宅deトリイクに参加することは、配送業界の人手不足に苦しむドライバーさんの負担軽減、そして脱炭素社会の実現に繋がります。</p>
+          <p class="friend__indent-text" style="margin-bottom: 8px;">・現在、国土交通省と共に自宅deトリイクの普及促進を進めています。是非、人手不足で大変な思いをされているドライバーさんのためにお力添えください。</p>
+          <p class="friend__indent-text"><strong style="color: #2c5f2d;">・自宅deトリイクは、ポイントのお得さだけでなく、社会にもやさしいサービスです。</strong></p>
+        </div>
+      </section>
+
+      <!-- よくある質問 -->
+      <section class="faq" id="faq" style="margin: 48px 0;">
+        <div class="faq__inner" style="max-width: 100%; padding: 0;">
+          <div class="faq__heading" style="text-align: center; margin-bottom: 32px;">
+            <h2 class="faq__title" style="font-size: 28px; font-weight: 700; color: #ea761f; margin: 0 0 8px 0; padding-bottom: 0; border-bottom: none;">よくある質問</h2>
+            <p class="faq__en" style="font-size: 14px; color: #999; margin: 0;">FAQ</p>
+          </div>
+          <div class="faq__list">
+            <div class="faq-item is-open">
+              <button type="button" class="faq-item__q" aria-expanded="true">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">自宅deトリイクとは何ですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>自宅で受け取った荷物の伝票をスマホで撮って送るだけで、ポイントがたまるサービスです。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">紹介特典をもらうには何が必要ですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>紹介コードを入力して会員登録し、メールアドレス認証を完了すれば対象です（伝票提出・アンケート回答は不要です）。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">利用は無料ですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>無料でご利用いただけます（通信費のみお客様のご負担となります）。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">なぜポイントがもらえるのですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>国土交通省採択事業「物流負荷低減に向けた多様・柔軟な受取り方法普及促進事業」の一環として、物流の負荷低減にご協力いただいたお礼にポイントを還元しています。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">ポイントは何に交換できますか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <div>
+                    <p>日本国内の主要なポイント・ギフト券に交換できます。</p>
+                    <p class="faq-item__link" style="margin-top: 8px;"><a href="https://toriiku-jp.com/home/home_point.html" target="_blank" rel="noopener" style="text-decoration: underline; color: #0066cc;">ポイントの詳細はこちら</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">ポイントはいつ付与されますか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <div>
+                    <p>本キャンペーンの紹介特典は、条件達成（メールアドレス認証の完了）後、紹介する方の200円分・紹介されたお友だちの100円分ともに3営業日程度で付与されます。</p>
+                    <p class="faq-item__link" style="margin-top: 8px;"><a href="https://toriiku-jp.com/home/home_point.html" target="_blank" rel="noopener" style="text-decoration: underline; color: #0066cc;">ポイントの詳細はこちら</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">伝票の個人情報は大丈夫ですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>提出いただいた伝票は、ご登録情報との照合およびポイント付与の確認のみに使用します。それ以外の目的では利用しません。詳しくは<a href="https://everywill-jp.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>をご覧ください。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- LINE 相談ボタン -->
+        <div style="text-align: center; margin-top: 32px; padding-top: 32px; border-top: 1px solid #ddd;">
+          <p style="font-size: 14px; color: #666; margin-bottom: 16px;">解決しない場合は、こちらからお気軽にお問い合わせください。</p>
+          <a href="https://page.line.me/301wzhhp?oat__id=6771964&openQrModal=true" target="_blank" rel="noopener" style="display: inline-block; background: #00B900; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 14px;">LINEで相談する</a>
+        </div>
+      </section>
+
+      <section class="friend__section">
+        <h2 class="friend__section-title">ご注意事項</h2>
+
+        <div class="friend__terms">
+          <ul>
+            <li><strong>【期間限定】本キャンペーンは2026年10月6日（火）～10月31日（土）の期間限定です。</strong>進呈条件（紹介コードを入力した会員登録＆メールアドレス認証の完了）を10月31日（土）までに完了した場合のみが対象となります。</li>
+            <li><strong>【11/1以降は対象外】</strong>11月1日（日）以降の会員登録は、期間限定キャンペーンの対象外となります。</li>
+            <li><strong>【ポイントの付与時期】</strong>条件達成（メールアドレス認証の完了）後、紹介する方の200円分・紹介されたお友だちの100円分ともに、3営業日程度で付与されます。</li>
+            <li><strong>紹介ポイントとは：</strong>本キャンペーン期間（10月6日～10月31日）に、あなたが紹介したお友だちが紹介コードを入力して会員登録し、メールアドレス認証を完了した場合に、紹介者であるあなたに付与されるキャンペーン期間限定の特典ポイント（200円分）を指します。</li>
+            <li>紹介キャンペーンコードは自宅deトリイクと、トリイクスポットと同様のコードとなり、両サービスでご利用いただけます。</li>
+            <li>紹介されたお友だちは、これまでに自宅deトリイクに登録・ご利用したことがない方に限ります（新規ユーザー様限定）。</li>
+            <li>本紹介キャンペーンの進呈額は、モニターキャンペーン（事前エントリー）との併用はできません。</li>
+            <li>同一人物による複数アカウントの作成や、架空のデータを用いた紹介行為など、不正が発覚した場合はすべての進呈額を無効とし、アカウントを停止させていただく場合があります。</li>
+            <li>本キャンペーンの内容は予告なく変更または終了する場合があります。あらかじめご了承ください。</li>
+          </ul>
+        </div>
+      </section>
+
+      <p class="friend__back"><a href="index.html" target="_blank" rel="noopener">トップにもどる</a></p>
+
+    </div>
+  </main>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="footer__company">
+      <dl class="footer__company-list">
+        <div class="footer__company-row">
+          <dt>会社名</dt>
+          <dd>株式会社Every WiLL</dd>
+        </div>
+        <div class="footer__company-row">
+          <dt>代表者</dt>
+          <dd>代表取締役　須藤 俊明</dd>
+        </div>
+        <div class="footer__company-row">
+          <dt>所在地</dt>
+          <dd>〒169-0051　東京都新宿区西早稲田一丁目22番3号</dd>
+        </div>
+        <div class="footer__company-row">
+          <dt>連絡先</dt>
+          <dd>
+            メール <a href="mailto:customer_support@everywill-jp.com">customer_support@everywill-jp.com</a><br>
+            お問い合わせフォーム <a href="https://everywill-jp.com/contact/" target="_blank" rel="noopener">https://everywill-jp.com/contact/</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="footer__inner">
+      <p class="footer__copy">© Every WiLL Inc.</p>
+      <nav class="footer__links">
+        <a href="https://toriiku-jp.com/terms.html#home" target="_blank" rel="noopener">利用規約</a>
+        <a href="index.html#faq" target="_blank" rel="noopener">よくある質問</a>
+        <a href="https://everywill-jp.com/" target="_blank" rel="noopener">運営会社</a>
+        <a href="https://everywill-jp.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      </nav>
+    </div>
+  </footer>
+
+</div>
+
+<!-- FAQアコーディオン動作用 JavaScript -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
