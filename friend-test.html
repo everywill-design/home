@@ -48,35 +48,15 @@
 </script>
 
 <style>
-  /* 期間限定キャンペーンの強調スタイル */
-  .campaign-banner {
-    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
-    color: white;
-    padding: 16px 20px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 28px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
-    animation: pulse 2s ease-in-out infinite;
+  /* 冒頭バナー（画像のみ・PC/スマホとも幅に合わせて表示） */
+  .friend__banner {
+    margin: 0 0 28px;
   }
-
-  .campaign-banner span {
+  .friend__banner img {
     display: block;
-    font-size: 14px;
-    margin-top: 4px;
-    font-weight: 500;
-    opacity: 0.95;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
-    }
-    50% {
-      box-shadow: 0 4px 20px rgba(204, 0, 0, 0.4);
-    }
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
   .friend__reward-badge {
@@ -260,6 +240,20 @@
     text-indent: -1em;
   }
 
+  /* 紹介者200pt追記（メディア掲載見出しと同じサイズ・2行・中央寄せ） */
+  .friend__referral-note {
+    margin: 48px 0 32px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #333;
+  }
+  .friend__referral-note .under-yellow {
+    background: linear-gradient(transparent 55%, rgba(253, 198, 1, 0.5) 55%);
+    padding: 0 0.25rem;
+  }
+
   /* モバイルレスポンシブ */
   @media (max-width: 768px) {
     .friend__intro-title {
@@ -386,6 +380,11 @@
       border: none;
       cursor: pointer;
     }
+
+    .friend__referral-note {
+      font-size: 20px;
+      margin: 32px 0 24px;
+    }
   }
 
   /* リンク可視化 */
@@ -443,16 +442,15 @@
   <main class="friend">
     <div class="friend__inner">
 
-      <!-- 期間限定バナー：ページ上部に強調表示 -->
-      <div class="campaign-banner">
-        🎉 期間限定キャンペーン実施中
-        <span>10月6日（火）～ 10月31日（土）</span>
+      <!-- 冒頭バナー（画像） -->
+      <div class="friend__banner">
+        <img src="img/banner-friend-2.webp" alt="10月紹介キャンペーン 会員登録するだけ！紹介したあなたに200円分、紹介されたお友だちに100円分もらえる（10/6～10/31）">
       </div>
 
-      <h1 class="friend__title">友だち<span class="marker">紹介キャンペーン</span></h1>
+      <h1 class="friend__title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">友だち紹介キャンペーン</h1>
 
       <p class="friend__lead">
-        自宅deトリイクを身近な人に紹介する（数十秒）と、紹介したあなたに200円分、紹介されたお友だちに100円分が進呈されます。
+        紹介は数秒！会員登録は1分で完了！
       </p>
 
       <div class="friend__rewards">
@@ -511,7 +509,7 @@
         <p class="friend__back" style="margin-bottom: 24px;">
           <a href="https://toriiku-jp.com/home/index.html" target="_blank" rel="noopener">詳細はこちら</a>
         </p>
-        
+
         <div class="friend__app-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <a href="https://apps.apple.com/app/apple-store/id6785268481?pt=129075299&ct=202609_22&mt=8" target="_blank" rel="noopener">
             <img src="img/badge-appstore.webp" alt="Download on the App Store" style="height: 40px; display: block;">
@@ -583,6 +581,12 @@
           <p class="friend__indent-text"><strong style="color: #2c5f2d;">・自宅deトリイクは、ポイントのお得さだけでなく、社会にもやさしいサービスです。</strong></p>
         </div>
       </section>
+
+      <!-- 紹介者200pt追記 -->
+      <p class="friend__referral-note">
+        紹介されたお友だちも、別のお友だちを紹介すると、<br>
+        今後は<span class="under-yellow">紹介者として200pt×人数分</span>を受け取れます！
+      </p>
 
       <!-- よくある質問 -->
       <section class="faq" id="faq" style="margin: 48px 0;">
