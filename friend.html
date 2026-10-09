@@ -6,7 +6,7 @@
 <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="index,follow">
 <title>友だち紹介キャンペーン（10/6～10/31限定）｜自宅deトリイク</title>
-<meta name="description" content="【期間限定10/6～10/31】自宅deトリイクを紹介すると、紹介した方に200円分、紹介されたお友だちに100円分。伝票の提出とアンケート回答で完了する友だち紹介キャンペーンの特典内容、参加方法、注意事項をご案内します。">
+<meta name="description" content="【期間限定10/6～10/31】自宅deトリイクを紹介すると、紹介した方に200円分、紹介されたお友だちに100円分。紹介コードを入力した会員登録とメールアドレス認証の完了だけで進呈される友だち紹介キャンペーンの特典内容、参加方法、注意事項をご案内します。">
 <meta name="author" content="株式会社Every WiLL">
 
 <!-- ▼要確認：canonical / og:url は自宅deトリイクの実URLに差し替えてください -->
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://toriiku-jp.com/friend-1001.html">
 <meta property="og:title" content="友だち紹介キャンペーン（10/6～10/31限定）｜自宅deトリイク">
-<meta property="og:description" content="紹介した方に200円分、紹介されたお友だちに100円分。伝票の提出とアンケート回答で完了します。">
+<meta property="og:description" content="紹介した方に200円分、紹介されたお友だちに100円分。会員登録とメールアドレス認証の完了で進呈されます。">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,35 +48,15 @@
 </script>
 
 <style>
-  /* 期間限定キャンペーンの強調スタイル */
-  .campaign-banner {
-    background: linear-gradient(135deg, #ff4444 0%, #cc0000 100%);
-    color: white;
-    padding: 16px 20px;
-    text-align: center;
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 28px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
-    animation: pulse 2s ease-in-out infinite;
+  /* 冒頭バナー（画像のみ・PC/スマホとも幅に合わせて表示） */
+  .friend__banner {
+    margin: 0 0 28px;
   }
-
-  .campaign-banner span {
+  .friend__banner img {
     display: block;
-    font-size: 14px;
-    margin-top: 4px;
-    font-weight: 500;
-    opacity: 0.95;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
-      box-shadow: 0 4px 12px rgba(204, 0, 0, 0.25);
-    }
-    50% {
-      box-shadow: 0 4px 20px rgba(204, 0, 0, 0.4);
-    }
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
   .friend__reward-badge {
@@ -94,6 +74,25 @@
   /* 報酬カードの強調 */
   .friend__reward {
     border: 2px solid #ff4444;
+  }
+
+  /* STEP内の画像 */
+  .friend__step-figure {
+    margin: 20px auto 0;
+    max-width: 320px;
+    text-align: center;
+  }
+  .friend__step-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .friend__step-figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
   }
 
   /* Hero Section */
@@ -241,6 +240,20 @@
     text-indent: -1em;
   }
 
+  /* 紹介者200pt追記（メディア掲載見出しと同じサイズ・2行・中央寄せ） */
+  .friend__referral-note {
+    margin: 48px 0 32px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #333;
+  }
+  .friend__referral-note .under-yellow {
+    background: linear-gradient(transparent 55%, rgba(253, 198, 1, 0.5) 55%);
+    padding: 0 0.25rem;
+  }
+
   /* モバイルレスポンシブ */
   @media (max-width: 768px) {
     .friend__intro-title {
@@ -271,6 +284,14 @@
     }
     .media__awards picture:last-child:nth-child(odd) {
       margin: 0 auto; /* 3つ目の要素を中央寄せ */
+    }
+
+    .friend__step-figure {
+      max-width: 260px;
+      margin-top: 16px;
+    }
+    .friend__step-figcaption {
+      font-size: 12px;
     }
 
     .friend__hero-section {
@@ -359,6 +380,11 @@
       border: none;
       cursor: pointer;
     }
+
+    .friend__referral-note {
+      font-size: 20px;
+      margin: 32px 0 24px;
+    }
   }
 
   /* リンク可視化 */
@@ -416,18 +442,21 @@
   <main class="friend">
     <div class="friend__inner">
 
-      <!-- 期間限定バナー：ページ上部に強調表示 -->
-      <div class="campaign-banner">
-        🎉 期間限定キャンペーン実施中
-        <span>10月6日（火）～ 10月31日（土）</span>
+      <!-- 冒頭バナー（画像） -->
+      <div class="friend__banner">
+        <img src="img/banner-friend-3.webp" alt="10月紹介キャンペーン 会員登録するだけ！紹介したあなたに200円分、紹介されたお友だちに100円分もらえる（10/6～10/31）">
       </div>
 
-      <h1 class="friend__title">友だち<span class="marker">紹介キャンペーン</span></h1>
+      <h1 class="friend__title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">友だち紹介キャンペーン</h1>
 
       <p class="friend__lead">
-        自宅deトリイクを身近な人に紹介する（数十秒）と、紹介したあなたに200円分、紹介されたお友だちに100円分が進呈されます。
+       
       </p>
 
+      <p class="friend__referral-note">
+         <span class="under-yellow">紹介は数秒！会員登録は1分で完了！</span>
+      </p>
+      
       <div class="friend__rewards">
         <div class="friend__reward friend__reward--main">
           <div class="friend__reward-badge">期間限定 10/6～10/31</div>
@@ -435,7 +464,7 @@
           <p class="friend__reward-point">
             <span class="friend__reward-num">200</span><span class="friend__reward-unit">円分</span>
           </p>
-          <p class="friend__reward-cond">紹介されたお友だちが、10月31日（土）までに、会員登録をしサービスを利用すると進呈されます。</p>
+          <p class="friend__reward-cond">紹介されたお友だちが、10月31日（土）までに、会員登録すると進呈されます。</p>
         </div>
         <div class="friend__reward">
           <div class="friend__reward-badge">期間限定 10/6～10/31</div>
@@ -443,7 +472,7 @@
           <p class="friend__reward-point">
             <span class="friend__reward-num">100</span><span class="friend__reward-unit">円分</span>
           </p>
-          <p class="friend__reward-cond">10月31日（土）までに、会員登録しサービスを利用（以下のSTEP 01～04を完了）すると進呈されます。</p>
+          <p class="friend__reward-cond">10月31日（土）までに、紹介コードを入力して会員登録（以下のSTEP 01～02を完了）すると進呈されます。</p>
         </div>
       </div>
 
@@ -484,7 +513,7 @@
         <p class="friend__back" style="margin-bottom: 24px;">
           <a href="https://toriiku-jp.com/home/index.html" target="_blank" rel="noopener">詳細はこちら</a>
         </p>
-        
+
         <div class="friend__app-buttons" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <a href="https://apps.apple.com/app/apple-store/id6785268481?pt=129075299&ct=202609_22&mt=8" target="_blank" rel="noopener">
             <img src="img/badge-appstore.webp" alt="Download on the App Store" style="height: 40px; display: block;">
@@ -513,35 +542,18 @@
           <div class="friend__step">
             <div class="friend__step-head">
               <span class="friend__step-num">STEP 02</span>
-              <h3 class="friend__step-title">アプリをダウンロードして会員登録<br class="sp-only"><span class="marker">＜紹介されたお友だち＞</span></h3>
+              <h3 class="friend__step-title">会員登録・メールアドレス認証完了<br class="sp-only"><span class="marker">＜紹介されたお友だち＞</span></h3>
             </div>
             <ul class="friend__step-desc" style="list-style: none; padding: 0; margin: 0;">
               <li style="margin-bottom: 8px;">・アプリをダウンロードすると、「トリイクスポット」と「自宅deトリイク」が表示されますので「自宅deトリイク」を選択してください。</li>
-              <li style="margin-bottom: 8px;">・新規会員登録の画面にある<span class="accent">「紹介コード」欄</span>にコードを入力して、登録を完了します。</li>
-              <li>・紹介コードの入力方法は以下を参照ください。</li>
+              <li style="margin-bottom: 8px;">・新規会員登録の画面にある<span class="accent">「紹介コード」欄</span>にコードを入力して、登録を進めます。</li>
+              <li style="margin-bottom: 8px;">・ご登録のメールアドレス宛に認証メールが届きますので、<span class="accent">10月31日（土）までにメールアドレス認証を完了</span>してください。</li>
+              <li>・下の画面が表示されれば完了です。</li>
             </ul>
-          </div>
-
-          <div class="friend__step">
-            <div class="friend__step-head">
-              <span class="friend__step-num">STEP 03</span>
-              <h3 class="friend__step-title">自宅で受け取った荷物の伝票を提出する<br class="sp-only"><span class="marker">＜紹介されたお友だち＞</span></h3>
-            </div>
-            <p class="friend__step-desc">
-              いつも通りネット通販等で購入した商品の荷物を自宅で受け取った後に、荷物に貼ってある「送り状（伝票）」を撮影して提出します。<a href="https://toriiku-jp.com/home/index.html#steps" target="_blank" rel="noopener" style="text-decoration: underline; color: #0066cc;">詳細はこちら</a>
-            </p>
-          </div>
-
-          <div class="friend__step">
-            <div class="friend__step-head">
-              <span class="friend__step-num">STEP 04</span>
-              <h3 class="friend__step-title">アンケートに回答して完了<br class="sp-only"><span class="marker">＜紹介されたお友だち＞</span></h3>
-            </div>
-            <ul class="friend__step-desc" style="list-style: none; padding: 0; margin: 0;">
-              <li style="margin-bottom: 8px;">・伝票提出後、アプリ上に表示される簡単なアンケートに<span class="accent">10月31日（土）までに回答</span>してください（アンケートは LINE、またはメールに届きます。もしくはアプリ内に表示されます）。</li>
-              <li style="margin-bottom: 8px;">・「再配達はしなかったか」「時間指定で受け取れたか」など、ドライバーさんにやさしい受け取りをしていただくとさらにポイント UP。</li>
-              <li>・紹介されたお友だちの100円分は、ポイント履歴に「初回利用アンケート」として記載されます。</li>
-            </ul>
+            <figure class="friend__step-figure">
+              <img class="friend__step-img" src="img/registration.webp" alt="「メール認証が完了しました」画面" loading="lazy" decoding="async">
+              <figcaption class="friend__step-figcaption">この画面が表示されれば、キャンペーンの条件達成です。</figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -574,6 +586,12 @@
         </div>
       </section>
 
+      <!-- 紹介者200pt追記 -->
+      <p class="friend__referral-note">
+        紹介されたお友だちも、<br class="sp-only">別のお友だちを紹介すると、<br>
+        次から<span class="under-yellow">紹介者として200pt×人数分</span>を<br class="sp-only">受け取れますのでぜひご紹介を！
+      </p>
+
       <!-- よくある質問 -->
       <section class="faq" id="faq" style="margin: 48px 0;">
         <div class="faq__inner" style="max-width: 100%; padding: 0;">
@@ -592,6 +610,19 @@
                 <div class="faq-item__a-inner">
                   <span class="faq-item__mark faq-item__mark--a">A.</span>
                   <p>自宅で受け取った荷物の伝票をスマホで撮って送るだけで、ポイントがたまるサービスです。</p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button type="button" class="faq-item__q" aria-expanded="false">
+                <span class="faq-item__mark">Q.</span>
+                <span class="faq-item__text">紹介特典をもらうには何が必要ですか？</span>
+                <span class="faq-item__toggle" aria-hidden="true"></span>
+              </button>
+              <div class="faq-item__a">
+                <div class="faq-item__a-inner">
+                  <span class="faq-item__mark faq-item__mark--a">A.</span>
+                  <p>紹介コードを入力して会員登録し、メールアドレス認証を完了すれば対象です（伝票提出・アンケート回答は不要です）。</p>
                 </div>
               </div>
             </div>
@@ -624,58 +655,6 @@
             <div class="faq-item">
               <button type="button" class="faq-item__q" aria-expanded="false">
                 <span class="faq-item__mark">Q.</span>
-                <span class="faq-item__text">どの配送会社の荷物が対象ですか？</span>
-                <span class="faq-item__toggle" aria-hidden="true"></span>
-              </button>
-              <div class="faq-item__a">
-                <div class="faq-item__a-inner">
-                  <span class="faq-item__mark faq-item__mark--a">A.</span>
-                  <p>すべての配送会社の荷物が対象です。</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button type="button" class="faq-item__q" aria-expanded="false">
-                <span class="faq-item__mark">Q.</span>
-                <span class="faq-item__text">対象にならない荷物はありますか？</span>
-                <span class="faq-item__toggle" aria-hidden="true"></span>
-              </button>
-              <div class="faq-item__a">
-                <div class="faq-item__a-inner">
-                  <span class="faq-item__mark faq-item__mark--a">A.</span>
-                  <p>書状・はがき・小包などの「郵便物」は対象外です。<br>ポスト投函の「宅配便（ネコポスなど）荷物」で伝票が貼付されているものであれば、ご提出いただけます。<br>（伝票（送り状・宛名ラベル）がお手元に残らないものも、対象外です。）</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button type="button" class="faq-item__q" aria-expanded="false">
-                <span class="faq-item__mark">Q.</span>
-                <span class="faq-item__text">家族宛ての荷物でも申請できますか？</span>
-                <span class="faq-item__toggle" aria-expanded="false"></span>
-              </button>
-              <div class="faq-item__a">
-                <div class="faq-item__a-inner">
-                  <span class="faq-item__mark faq-item__mark--a">A.</span>
-                  <p>できません。提出いただいた伝票とご登録の会員情報を照合してポイントを付与するため、ご本人宛の荷物が対象です。</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button type="button" class="faq-item__q" aria-expanded="false">
-                <span class="faq-item__mark">Q.</span>
-                <span class="faq-item__text">伝票はいつまでに撮影すればいいですか？</span>
-                <span class="faq-item__toggle" aria-hidden="true"></span>
-              </button>
-              <div class="faq-item__a">
-                <div class="faq-item__a-inner">
-                  <span class="faq-item__mark faq-item__mark--a">A.</span>
-                  <p>荷物を受け取ったその日のうちに撮影・ご提出ください。</p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button type="button" class="faq-item__q" aria-expanded="false">
-                <span class="faq-item__mark">Q.</span>
                 <span class="faq-item__text">ポイントは何に交換できますか？</span>
                 <span class="faq-item__toggle" aria-hidden="true"></span>
               </button>
@@ -699,7 +678,7 @@
                 <div class="faq-item__a-inner">
                   <span class="faq-item__mark faq-item__mark--a">A.</span>
                   <div>
-                    <p>ご利用受付から原則72時間以内に確定します。</p>
+                    <p>本キャンペーンの紹介特典は、条件達成（メールアドレス認証の完了）後、紹介する方の200円分・紹介されたお友だちの100円分ともに3営業日程度で付与されます。</p>
                     <p class="faq-item__link" style="margin-top: 8px;"><a href="https://toriiku-jp.com/home/home_point.html" target="_blank" rel="noopener" style="text-decoration: underline; color: #0066cc;">ポイントの詳細はこちら</a></p>
                   </div>
                 </div>
@@ -718,19 +697,6 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item">
-              <button type="button" class="faq-item__q" aria-expanded="false">
-                <span class="faq-item__mark">Q.</span>
-                <span class="faq-item__text">申請が承認されなかった場合はどうなりますか？</span>
-                <span class="faq-item__toggle" aria-hidden="true"></span>
-              </button>
-              <div class="faq-item__a">
-                <div class="faq-item__a-inner">
-                  <span class="faq-item__mark faq-item__mark--a">A.</span>
-                  <p>画像が不鮮明・情報が不足している場合は、LINEで再提出のご案内をお送りします。あらためてご提出いただければポイント付与の対象となります。</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
         <!-- LINE 相談ボタン -->
@@ -745,15 +711,12 @@
 
         <div class="friend__terms">
           <ul>
-            <li><strong>【期間限定】本キャンペーンは2026年10月6日（火）～10月31日（土）の期間限定です。</strong>進呈条件（伝票提出＆アンケート回答）の両方を10月31日（土）までに完了した場合のみが対象となります。</li>
-            <li><strong>【11/1以降は対象外】</strong>11月1日（日）以降のアンケート回答は、期間限定キャンペーンの対象外となります。</li>
-            <li><strong>【アンケートについて】</strong>アンケートは伝票承認後、LINE、またはメールに届きます。もしくはアプリ内に表示されます。回答にかかる時間は約1-2分程度で、進呈には、このアンケート回答が必須です。</li>
-            <li><strong>【ポイントの付与時期】</strong>紹介されたお友だちが最初に伝票を提出した時のポイント（初回利用ポイント100円分）は即時付与されます。紹介する方の200円分は、紹介されたお友だちがアンケート回答完了後、3営業日程度で付与されます。</li>
-            <li>紹介されたお友だちの100円分は、ポイント履歴に「初回利用アンケート」として記載されます。</li>
-            <li><strong>初回利用ポイントとは：</strong>紹介されたお友だちが、初めて自宅deトリイクのサービスを利用し、荷物の伝票を提出およびアンケートに回答した際に付与されるポイント（100円分）を指します。これはサービス利用の基本条件達成時に自動的に付与される通常ポイントです。</li>
-            <li><strong>紹介ポイントとは：</strong>本キャンペーン期間（10月6日～10月31日）に、あなたが紹介したお友だちが会員登録および初回伝票提出、アンケート回答を完了した場合に、紹介者であるあなたに付与されるキャンペーン期間限定の特典ポイント（200円分）を指します。</li>
+            <li><strong>【期間限定】本キャンペーンは2026年10月6日（火）～10月31日（土）の期間限定です。</strong>進呈条件（紹介コードを入力した会員登録＆メールアドレス認証の完了）を10月31日（土）までに完了した場合のみが対象となります。</li>
+            <li><strong>【11/1以降は対象外】</strong>11月1日（日）以降の会員登録は、期間限定キャンペーンの対象外となります。</li>
+            <li><strong>【ポイントの付与時期】</strong>条件達成（メールアドレス認証の完了）後、紹介する方の200円分・紹介されたお友だちの100円分ともに、3営業日程度で付与されます。</li>
+            <li><strong>紹介ポイントとは：</strong>本キャンペーン期間（10月6日～10月31日）に、あなたが紹介したお友だちが紹介コードを入力して会員登録し、メールアドレス認証を完了した場合に、紹介者であるあなたに付与されるキャンペーン期間限定の特典ポイント（200円分）を指します。</li>
             <li>紹介キャンペーンコードは自宅deトリイクと、トリイクスポットと同様のコードとなり、両サービスでご利用いただけます。</li>
-            <li>紹介されたお友だちは、これまでに自宅deトリイクに登録・ご利用したことがない方に限ります（新規ユーザー様限定）。</li>
+            <li>紹介されたお友だちは、これまでにトリイクスポット・自宅deトリイクに登録がない方に限ります（新規ユーザー様限定）。</li>
             <li>本紹介キャンペーンの進呈額は、モニターキャンペーン（事前エントリー）との併用はできません。</li>
             <li>同一人物による複数アカウントの作成や、架空のデータを用いた紹介行為など、不正が発覚した場合はすべての進呈額を無効とし、アカウントを停止させていただく場合があります。</li>
             <li>本キャンペーンの内容は予告なく変更または終了する場合があります。あらかじめご了承ください。</li>
