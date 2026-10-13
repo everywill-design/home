@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お買い物はトリイクから｜自宅deトリイク</title>
+<meta name="description" content="自宅deトリイクのアプリから、いつものネットショップへ。物流にやさしい注文のしかたを知って、荷物を受け取ったらポイント。ポイントは買い物ではなく、荷物の受け取り方とアンケートの回答で決まります。">
+<link rel="canonical" href="https://toriiku-jp.com/home/shop.html">
+<link rel="icon" type="image/webp" href="img/favicon.webp">
+<link rel="apple-touch-icon" href="img/favicon.webp">
+<meta name="theme-color" content="#ea761f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="トリイク">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://toriiku-jp.com/home/shop.html">
+<meta property="og:title" content="お買い物はトリイクから｜自宅deトリイク">
+<meta property="og:description" content="アプリから、いつものネットショップへ。物流にやさしい注文のしかたを知って、荷物を受け取ったらポイント。">
+<meta property="og:image" content="https://toriiku-jp.com/home/img/favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#ea761f; --bg:#FAF7ED; --line:#f2ede1;
+  --text:#2f2a24; --sub:#5f5f5f; --card:#ffffff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.8;
+  font-size:16px;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--orange)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* ヘッダ */
+.hd{background:#fff;border-bottom:1px solid var(--line)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.hd img{width:150px}
+.hd a.back{font-size:13px;color:var(--sub);text-decoration:none}
+
+/* ヒーロー */
+.hero{padding:52px 0 40px;text-align:center}
+.hero h1{font-size:30px;font-weight:900;line-height:1.5;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero p{margin-top:18px;font-size:16px;color:var(--sub)}
+.badge-mlit{display:inline-block;margin-top:22px;background:#fff;border:1px solid var(--line);
+  border-radius:999px;padding:8px 18px;font-size:13px;color:var(--sub)}
+
+/* セクション共通 */
+section.blk{padding:44px 0}
+h2{font-size:22px;font-weight:900;line-height:1.5;text-align:center}
+h2 .ac{color:var(--orange)}
+.lead{margin-top:14px;text-align:center;color:var(--sub);font-size:15px}
+.card{background:var(--card);border-radius:14px;padding:22px;border:1px solid var(--line)}
+
+/* 画面イメージ */
+.mock{margin:28px auto 0;max-width:330px;background:#fff;border:1px solid var(--line);
+  border-radius:22px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+.mock .bar{height:6px;width:64px;background:#e8e2d6;border-radius:4px;margin:0 auto 14px}
+.mock h3{font-size:15px;font-weight:700;margin-bottom:12px}
+.shoplist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.shopbtn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 10px;
+  text-align:center;font-size:13px;font-weight:700;color:var(--text)}
+.shopbtn span{display:block;font-size:11px;font-weight:400;color:var(--sub);margin-top:4px}
+.pop{margin-top:14px;background:#fff7ec;border:1px solid #f6ddc0;border-radius:12px;padding:14px}
+.pop .t{font-size:13px;font-weight:700;color:var(--orange)}
+.pop ul{margin:8px 0 0 18px;font-size:12px;color:var(--sub);line-height:1.9}
+.mockcap{margin-top:14px;text-align:center;font-size:13px;color:var(--sub)}
+
+/* しくみ */
+.flow{margin-top:26px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.flow .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 12px;text-align:center}
+.flow .n{width:30px;height:30px;line-height:30px;border-radius:50%;background:var(--orange);color:#fff;
+  font-size:13px;font-weight:700;margin:0 auto 10px}
+.flow .st p{font-size:13px;line-height:1.7}
+.flow .st p b{display:block;font-size:14px;margin-bottom:4px}
+
+.notice{margin-top:24px;background:#fff;border:2px solid var(--orange);border-radius:14px;padding:20px}
+.notice b{display:block;font-size:16px;color:var(--orange);margin-bottom:8px}
+.notice p{font-size:14px;line-height:1.9}
+
+/* 注文方法 */
+.ways{margin-top:26px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.way{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.way b{display:block;font-size:15px;margin-bottom:6px}
+.way p{font-size:13px;color:var(--sub);line-height:1.8}
+
+/* 掲載先 */
+.shops{margin-top:24px}
+.shops .card p{font-size:14px;line-height:1.9}
+
+/* ダウンロード */
+.dl{text-align:center;padding:44px 0 52px}
+.dl .btns{margin-top:22px;display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap}
+.dl .btns img{width:190px}
+
+/* 折りたたみ */
+details{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+summary{cursor:pointer;font-size:14px;font-weight:700;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"ひらく";float:right;font-size:12px;color:var(--orange);font-weight:400}
+details[open] summary::after{content:"とじる"}
+details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
+
+/* フッタ */
+.ft{background:#fff;border-top:1px solid var(--line);padding:32px 0 40px;margin-top:20px}
+.ft dl{display:grid;grid-template-columns:96px 1fr;gap:8px 16px;font-size:13px;color:var(--sub)}
+.ft dt{font-weight:700;color:var(--text)}
+.ft .links{margin-top:22px;display:flex;gap:16px;flex-wrap:wrap;font-size:13px}
+.ft .links a{color:var(--sub)}
+.ft .cp{margin-top:18px;font-size:12px;color:#9a948a}
+
+@media(max-width:700px){
+  .hero h1{font-size:23px}
+  h2{font-size:19px}
+  .flow{grid-template-columns:1fr 1fr}
+  .ways{grid-template-columns:1fr}
+  .ft dl{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap">
+    <a href="https://toriiku-jp.com/home/"><img src="img/logo.webp" alt="自宅deトリイク" width="168" height="50"></a>
+    <a class="back" href="https://toriiku-jp.com/home/">サービストップへ</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>お買い物は、<br><em>トリイクから。</em></h1>
+    <p>アプリから、いつものネットショップへ。<br>物流にやさしい注文のしかたを知って、荷物を受け取ったらポイント。</p>
+    <span class="badge-mlit">国土交通省の実証事業として取り組んでいます</span>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>アプリの<span class="ac">ショップ</span>から、お店へ</h2>
+    <p class="lead">アプリの中にネットショップのボタンが並びます。<br>押すと、物流にやさしい注文のしかたの案内が出ます。</p>
+
+    <div class="mock">
+      <div class="bar"></div>
+      <h3>ショップ</h3>
+      <div class="shoplist">
+        <div class="shopbtn">ネットショップ A<span>公式サイトへ</span></div>
+        <div class="shopbtn">ネットショップ B<span>公式サイトへ</span></div>
+        <div class="shopbtn">ネットショップ C<span>公式サイトへ</span></div>
+        <div class="shopbtn">ネットショップ D<span>公式サイトへ</span></div>
+      </div>
+      <div class="pop">
+        <div class="t">注文の前に、ひとつだけ</div>
+        <ul>
+          <li>まとめて注文すると、荷物の数が減ります</li>
+          <li>置き配を選ぶと、再配達が減ります</li>
+          <li>受け取れる日時を指定しましょう</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mockcap">掲載イメージです。お店の名前は提携が決まりしだい入ります。</p>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>ポイントは、<span class="ac">受け取り方</span>で決まります</h2>
+    <p class="lead">どこで買ったか、いくら買ったかでは決まりません。</p>
+
+    <div class="flow">
+      <div class="st"><div class="n">1</div><p><b>注文する</b>物流にやさしい注文のしかたで</p></div>
+      <div class="st"><div class="n">2</div><p><b>受け取る</b>置き配や日時指定で</p></div>
+      <div class="st"><div class="n">3</div><p><b>伝票を撮る</b>アプリから提出</p></div>
+      <div class="st"><div class="n">4</div><p><b>ポイント</b>アンケートの回答に応じて</p></div>
+    </div>
+
+    <div class="notice">
+      <b>大事なこと</b>
+      <p>ショップのボタンを押しても、そこでお買い物をしても、それ自体ではポイントは付きません。ポイントは、荷物を受け取ったあとに伝票を提出し、「置き配にした」「再配達を出さなかった」などをアンケートで答えると、その内容に応じて付きます。買い物の金額にも、買ったかどうかにも連動しません。</p>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>物流に<span class="ac">やさしい</span>注文のしかた</h2>
+    <p class="lead">ショップのボタンを押すと出てくる案内です。</p>
+    <div class="ways">
+      <div class="way"><b>まとめて注文する</b><p>ほしいものを1回の注文にまとめると、届く荷物の数が減ります。トラックの走る回数も減ります。</p></div>
+      <div class="way"><b>置き配を指定する</b><p>玄関前や宅配ボックスで受け取れば、再配達がなくなります。ドライバーさんの負担が大きく減ります。</p></div>
+      <div class="way"><b>受け取れる日時を選ぶ</b><p>確実に家にいる日時を指定すれば、一度で受け取れます。</p></div>
+      <div class="way"><b>コンビニや店舗で受け取る</b><p>外出のついでに受け取れば、配達そのものが減ります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk">
+  <div class="wrap">
+    <h2>掲載しているネットショップ</h2>
+    <div class="shops">
+      <div class="card">
+        <p>提携が決まったお店から順に、アプリのショップ画面に掲載していきます。掲載しているお店は、アプリの中でご確認いただけます。お店のボタンから移動したあとのお買い物は、そのお店のサイトでのお取引になります。トリイクは注文や決済には関与しません。</p>
+      </div>
+      <details>
+        <summary>ポイントについての注意事項</summary>
+        <ul>
+          <li>トリイクポイントは、外部サービス「デジコ（株式会社DIGITALIO提供）」を通じて、お好きなポイント・ギフトに交換します。</li>
+          <li>各ポイント・ギフトの詳細仕様や交換条件は、外部サービス側の規定に準じます。</li>
+          <li>付与されるトリイクポイント数は、利用回数・会員ランクにより異なります。</li>
+          <li>交換可能なポイント・ギフトのラインナップは、予告なく変更となる場合があります。</li>
+          <li>トリイクポイントの有効期限は、獲得した月を1ヶ月目として起算し、6ヶ月目の月末日までとします。</li>
+          <li>書状・はがき・小包などの郵便物は、伝票の提出の対象外です。</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="dl">
+  <div class="wrap">
+    <h2>まずは<span class="ac">無料</span>ではじめる</h2>
+    <p class="lead">アプリのダウンロードと会員登録は無料です。</p>
+    <div class="btns">
+      <a href="https://apps.apple.com/jp/app/apple-store/id6785268481?pt=129075299&amp;ct=202610_shop&amp;mt=8" target="_blank" rel="noopener"><img src="img/badge-appstore.webp" alt="Download on the App Store" width="229" height="80"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.toriiku.app&amp;utm_source=ctd&amp;utm_medium=web&amp;utm_campaign=202610_shop" target="_blank" rel="noopener"><img src="img/badge-googleplay.webp" alt="GET IT ON Google Play" width="238" height="80"></a>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="wrap">
+    <dl>
+      <dt>サービス名</dt><dd>自宅deトリイク</dd>
+      <dt>会社名</dt><dd>株式会社Every WiLL</dd>
+      <dt>代表者</dt><dd>代表取締役　須藤 俊明</dd>
+      <dt>所在地</dt><dd>〒169-0051　東京都新宿区西早稲田一丁目22番3号</dd>
+      <dt>連絡先</dt><dd>メール <a href="mailto:customer_support@everywill-jp.com">customer_support@everywill-jp.com</a><br>お問い合わせフォーム <a href="https://everywill-jp.com/contact/" target="_blank" rel="noopener">https://everywill-jp.com/contact/</a></dd>
+    </dl>
+    <div class="links">
+      <a href="https://toriiku-jp.com/home/" target="_blank" rel="noopener">自宅deトリイク</a>
+      <a href="https://everywill-jp.com/" target="_blank" rel="noopener">運営会社</a>
+      <a href="https://toriiku-jp.com/terms.html#home" target="_blank" rel="noopener">利用規約</a>
+      <a href="https://everywill-jp.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="https://everywill-jp.com/contact/" target="_blank" rel="noopener">お問い合わせ</a>
+    </div>
+    <p class="cp">&copy; Every WiLL Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
