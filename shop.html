@@ -61,10 +61,10 @@ h2 .ac{color:var(--orange)}
   border-radius:22px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.05)}
 .mock .bar{height:6px;width:64px;background:#e8e2d6;border-radius:4px;margin:0 auto 14px}
 .mock h3{font-size:15px;font-weight:700;margin-bottom:12px}
-.shoplist{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.shopbtn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 10px;
-  text-align:center;font-size:13px;font-weight:700;color:var(--text)}
-.shopbtn span{display:block;font-size:11px;font-weight:400;color:var(--sub);margin-top:4px}
+.shoplist{display:grid;grid-template-columns:1fr;gap:8px}
+.shopbtn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+  font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;justify-content:space-between}
+.shopbtn span{font-size:11px;font-weight:400;color:var(--sub)}
 .pop{margin-top:14px;background:#fff7ec;border:1px solid #f6ddc0;border-radius:12px;padding:14px}
 .pop .t{font-size:13px;font-weight:700;color:var(--orange)}
 .pop ul{margin:8px 0 0 18px;font-size:12px;color:var(--sub);line-height:1.9}
@@ -91,6 +91,14 @@ h2 .ac{color:var(--orange)}
 /* 掲載先 */
 .shops{margin-top:24px}
 .shops .card p{font-size:14px;line-height:1.9}
+.shoprows{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.shoprow{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:16px 18px;border-bottom:1px solid var(--line)}
+.shoprow:last-child{border-bottom:none}
+.shoprow .nm{font-size:15px;font-weight:700}
+.shoprow .go{font-size:13px;font-weight:700;color:var(--orange);text-decoration:none;white-space:nowrap}
+.shoprow .soon{font-size:12px;color:var(--sub);white-space:nowrap}
+.adnote{margin-top:12px;font-size:12px;color:var(--sub);text-align:center}
 
 /* ダウンロード */
 .dl{text-align:center;padding:44px 0 52px}
@@ -148,10 +156,13 @@ details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
       <div class="bar"></div>
       <h3>ショップ</h3>
       <div class="shoplist">
-        <div class="shopbtn">ネットショップ A<span>公式サイトへ</span></div>
-        <div class="shopbtn">ネットショップ B<span>公式サイトへ</span></div>
-        <div class="shopbtn">ネットショップ C<span>公式サイトへ</span></div>
-        <div class="shopbtn">ネットショップ D<span>公式サイトへ</span></div>
+        <div class="shopbtn">Amazon<span>公式サイトへ</span></div>
+        <div class="shopbtn">楽天市場<span>公式サイトへ</span></div>
+        <div class="shopbtn">Yahoo!ショッピング<span>公式サイトへ</span></div>
+        <div class="shopbtn">Qoo10<span>公式サイトへ</span></div>
+        <div class="shopbtn">SHEIN<span>公式サイトへ</span></div>
+        <div class="shopbtn">アイリスプラザ<span>公式サイトへ</span></div>
+        <div class="shopbtn">JRE MALL<span>公式サイトへ</span></div>
       </div>
       <div class="pop">
         <div class="t">注文の前に、ひとつだけ</div>
@@ -162,7 +173,7 @@ details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
         </ul>
       </div>
     </div>
-    <p class="mockcap">掲載イメージです。お店の名前は提携が決まりしだい入ります。</p>
+    <p class="mockcap">アプリのショップ画面の掲載イメージです。</p>
   </div>
 </section>
 
@@ -180,7 +191,7 @@ details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
 
     <div class="notice">
       <b>大事なこと</b>
-      <p>ショップのボタンを押しても、そこでお買い物をしても、それ自体ではポイントは付きません。ポイントは、荷物を受け取ったあとに伝票を提出し、「置き配にした」「再配達を出さなかった」などをアンケートで答えると、その内容に応じて付きます。買い物の金額にも、買ったかどうかにも連動しません。</p>
+      <p>ショップのボタンを押しても、そこでお買い物をしても、それ自体ではポイントは付きません。ポイントは、買い物の金額にも、買ったかどうかにも連動しません。</p>
     </div>
   </div>
 </section>
@@ -201,10 +212,45 @@ details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
 <section class="blk">
   <div class="wrap">
     <h2>掲載しているネットショップ</h2>
+    <p class="lead">アプリのショップ画面に並ぶお店です。</p>
+
     <div class="shops">
-      <div class="card">
-        <p>提携が決まったお店から順に、アプリのショップ画面に掲載していきます。掲載しているお店は、アプリの中でご確認いただけます。お店のボタンから移動したあとのお買い物は、そのお店のサイトでのお取引になります。トリイクは注文や決済には関与しません。</p>
+      <div class="shoprows">
+        <div class="shoprow">
+          <span class="nm">Amazon</span>
+          <span class="soon">アプリから</span>
+        </div>
+        <div class="shoprow">
+          <span class="nm">楽天市場</span>
+          <span class="soon">アプリから</span>
+        </div>
+        <div class="shoprow">
+          <span class="nm">Yahoo!ショッピング</span>
+          <a class="go" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3782019&amp;pid=892718064&amp;vc_url=https%3A%2F%2Fshopping.yahoo.co.jp%2F" target="_blank" rel="nofollow sponsored noopener">お店へ</a>
+        </div>
+        <div class="shoprow">
+          <span class="nm">Qoo10</span>
+          <a class="go" href="https://ck.jp.ap.valuecommerce.com/servlet/referral?sid=3782019&amp;pid=892718067&amp;vc_url=https%3A%2F%2Fwww.qoo10.jp%2F" target="_blank" rel="nofollow sponsored noopener">お店へ</a>
+        </div>
+        <div class="shoprow">
+          <span class="nm">SHEIN</span>
+          <span class="soon">アプリから</span>
+        </div>
+        <div class="shoprow">
+          <span class="nm">アイリスプラザ</span>
+          <span class="soon">アプリから</span>
+        </div>
+        <div class="shoprow">
+          <span class="nm">JRE MALL</span>
+          <span class="soon">アプリから</span>
+        </div>
       </div>
+      <p class="adnote">このページには広告（アフィリエイトリンク）が含まれます。</p>
+
+      <div class="card" style="margin-top:18px">
+        <p>お店のボタンから移動したあとのお買い物は、そのお店のサイトでのお取引になります。トリイクは注文や決済には関与しません。掲載するお店は順次増やしていきます。</p>
+      </div>
+
       <details>
         <summary>ポイントについての注意事項</summary>
         <ul>
@@ -242,6 +288,7 @@ details ul{margin:12px 0 0 18px;font-size:13px;color:var(--sub);line-height:1.9}
     </dl>
     <div class="links">
       <a href="https://toriiku-jp.com/home/" target="_blank" rel="noopener">自宅deトリイク</a>
+      <a href="https://toriiku-jp.com/" target="_blank" rel="noopener">トリイク</a>
       <a href="https://everywill-jp.com/" target="_blank" rel="noopener">運営会社</a>
       <a href="https://toriiku-jp.com/terms.html#home" target="_blank" rel="noopener">利用規約</a>
       <a href="https://everywill-jp.com/privacy/" target="_blank" rel="noopener">プライバシーポリシー</a>
