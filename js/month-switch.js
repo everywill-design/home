@@ -48,7 +48,8 @@
       'color:#fff;font-size:.75rem;line-height:1.7;vertical-align:.0625rem;}' +
       '.pm-banner__link{display:inline-block;margin-left:.5rem;color:var(--color-key);text-decoration:underline;text-underline-offset:.2em;white-space:nowrap;}' +
       '.pm-banner__link:hover{text-decoration:none;}' +
-      '@media (max-width:1099px){.pm-banner{margin:.75rem .9375rem;padding:.625rem 1rem;font-size:.8125rem;}}';
+      '@media (max-width:1099px){.pm-banner{margin:.75rem .9375rem;padding:.625rem 1rem;font-size:.8125rem;}}' +
+      '.friend .pm-banner{margin:0 auto 2rem;}';
     document.head.appendChild(st);
   }
   var banners = document.querySelectorAll('[data-pt-banner]');
