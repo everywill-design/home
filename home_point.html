@@ -289,16 +289,17 @@
 /* ============================================================
    今月・来月のポイント（いつも同じ住所のページ。毎月は月ごとの欄だけを直す）
    ============================================================ */
-.pm-tabs{display:flex;gap:8px;max-width:720px;margin:40px auto 18px;}
-.pm-tabs button{flex:1;min-height:48px;padding:10px 8px;border:2px solid #2f5f4a;border-radius:10px;background:#fff;color:#2f5f4a;font:700 15px/1.4 "Noto Sans JP",sans-serif;cursor:pointer;}
-.pm-tabs button[aria-selected="true"]{background:#2f5f4a;color:#fff;}
-.pm-tabs button:focus-visible{outline:3px solid #c98f3c;outline-offset:2px;}
-.pm-tabs .pm-badge{display:inline-block;margin-left:6px;padding:0 8px;border-radius:999px;background:#c98f3c;color:#fff;font-size:11px;vertical-align:2px;}
-.pm-notice{max-width:720px;margin:0 auto 14px;padding:12px 16px;background:#fff8ee;border:1px solid #f0dcbd;border-radius:10px;font:14px/1.7 "Noto Sans JP",sans-serif;color:#6b4f26;text-align:center;}
-.pm-notice a{color:#b5651d;font-weight:700;text-decoration:underline;cursor:pointer;}
-.pm-empty{max-width:720px;margin:0 auto 28px;padding:18px 16px;background:#f4f9f6;border:1px solid #cfe3d8;border-radius:10px;font:14px/1.8 "Noto Sans JP",sans-serif;color:#2f5f4a;text-align:center;}
-.pm-title{max-width:720px;margin:8px auto 18px;font:700 20px/1.4 "Zen Kaku Gothic New","Noto Sans JP",sans-serif;color:#2f5f4a;text-align:center;}
-.pm-title small{display:block;font-size:13px;font-weight:500;color:#5b7a6c;}
+.pm-tabs{display:flex;gap:.5rem;margin:4rem 0 0;border-bottom:3px solid var(--pt-key);}
+.pm-tabs button{flex:1 1 0;min-width:0;min-height:3.75rem;padding:.5rem .5rem .625rem;border:1px solid var(--pt-line);border-bottom:0;border-radius:var(--pt-radius) var(--pt-radius) 0 0;background:var(--pt-bg);color:var(--pt-muted);font-family:var(--font-base,"Zen Kaku Gothic New",sans-serif);font-size:1rem;font-weight:700;line-height:1.4;cursor:pointer;}
+.pm-tabs button[aria-selected="true"]{background:var(--pt-key);border-color:var(--pt-key);color:#fff;}
+.pm-tabs button:focus-visible{outline:2px solid var(--pt-key);outline-offset:3px;}
+.pm-tab-sub{display:block;font-size:.75rem;font-weight:500;}
+.pm-badge{display:inline-block;margin-left:.375rem;padding:0 .5rem;border-radius:999px;background:var(--pt-yellow);color:var(--pt-ink);font-size:.6875rem;font-weight:700;line-height:1.6;vertical-align:.0625rem;}
+.pm-notice{max-width:720px;margin:0 auto 28px;}
+.pt-revise a{color:var(--pt-key);font-weight:700;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;}
+.pt-revise a:hover{color:var(--pt-key-dark);}
+.pm-empty{margin-top:1.5rem;}
+.pm > .pt-head:first-child{margin-top:2rem;}
 .pm[hidden],[data-pt-hide]{display:none !important;}
 </style>
 </head>
@@ -330,7 +331,7 @@
       翌月のポイント数は、毎月末日までにこのページの「来月のポイント」でお知らせします。
     </p>
 
-    <div class="pm-notice" id="pm-notice" hidden></div>
+    <div class="pt-revise pm-notice" id="pm-notice" hidden></div>
 
 
     <section class="pt-box">
@@ -444,11 +445,11 @@
       <button type="button" role="tab" id="pm-tab-cur" aria-controls="pm-area" aria-selected="true">今月のポイント</button>
       <button type="button" role="tab" id="pm-tab-next" aria-controls="pm-area" aria-selected="false">来月のポイント</button>
     </div>
-    <div class="pm-empty" id="pm-empty" hidden></div>
+    <p class="pt-apply pm-empty" id="pm-empty" hidden></p>
 
     <!-- ===== 2026年11月のポイント（ここから） ===== -->
     <div class="pm" data-month="2026-11">
-    <h2 class="pm-title">2026年11月のポイント<small>適用期間：2026年11月1日（日）〜11月30日（月）</small></h2>
+    <div class="pt-head"><h2>2026年11月のポイント<small>適用期間：2026年11月1日（日）〜11月30日（月）</small></h2></div>
 
     <section class="pt-box">
     <div class="pt-head" id="rank">
@@ -720,7 +721,7 @@
 
     <!-- ===== 2026年12月のポイント（ここから） ===== -->
     <div class="pm" data-month="2026-12" data-change="yes">
-    <h2 class="pm-title">2026年12月のポイント<small>適用期間：2026年12月1日（火）〜12月31日（木）</small></h2>
+    <div class="pt-head"><h2>2026年12月のポイント<small>適用期間：2026年12月1日（火）〜12月31日（木）</small></h2></div>
     <div class="pt-revise">
       <span class="pt-revise-head">11月からの変更点</span>
       <p>・1回あたりの最大ポイント（会員ランク別）：ダイヤモンド 22→<strong>20pt</strong>／プラチナ 18→<strong>12pt</strong>／ゴールド 14→<strong>8pt</strong>／シルバー 11→<strong>6pt</strong>／ブロンズ 8→<strong>5pt</strong>／スタンダード 6→<strong>4pt</strong>／エントリー 5→<strong>4pt</strong></p>
@@ -729,7 +730,7 @@
       <p>・お友だち紹介のポイント：紹介した方・紹介されたお友だち、それぞれ 10→<strong>30pt</strong>（<a href="friend.html">お友だち紹介のページ</a>）</p>
     </div>
     <section class="pt-box">
-    <div class="pt-head" id="rank">
+    <div class="pt-head">
       <h2>会員ランク別の付与ポイント<small>直近6ヶ月間の累積利用回数で判定します</small></h2>
     </div>
 
@@ -809,7 +810,7 @@
     </section>
 
     <section class="pt-box">
-    <div class="pt-head" id="eco">
+    <div class="pt-head">
       <h2>物流にやさしい受け取り方で、さらに加算<small>送り状の撮影後に届くアンケートで、当てはまるものをお答えください</small></h2>
     </div>
 
@@ -904,7 +905,7 @@
 
     <!-- ===== 初回利用者ボーナス（新規追加） ===== -->
     <section class="pt-box">
-    <div class="pt-head" id="first">
+    <div class="pt-head">
       <h2>初回利用者ボーナス<small>はじめてご利用いただく方が対象です</small></h2>
     </div>
 
@@ -922,7 +923,7 @@
     </section>
 
     <section class="pt-box">
-    <div class="pt-head" id="bonus">
+    <div class="pt-head">
       <h2>月利用回数ボーナス<small>単月の利用回数に応じて追加付与します</small></h2>
     </div>
 
@@ -952,7 +953,7 @@
     </section>
 
     <section class="pt-box">
-    <div class="pt-head" id="spot">
+    <div class="pt-head">
       <h2>出店要望箇所ボーナス<small>トリイクスポットを設置してほしい場所を教えてください</small></h2>
     </div>
 
