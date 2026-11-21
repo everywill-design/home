@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>トリイク｜受け取った伝票、撮るだけでポイントに。</title>
   <meta name="description" content="面倒な手続きは一切なし。受け取った荷物の伝票を撮って送るだけで、かんたんにポイントが貯まります。国土交通省の実証事業にも採択された、いつもの受け取りをポイントに変えるサービスです。">
-  <link rel="canonical" href="https://toriiku-jp.com/home/">
+  <link rel="canonical" href="index.html">
   <link rel="icon" type="image/webp" href="img/favicon.webp">
   <link rel="apple-touch-icon" href="img/favicon.webp">
   <meta name="theme-color" content="#ea761f">
@@ -68,6 +69,7 @@
   </header>
 
   <main>
+    <div data-pt-banner="top"></div>
     <!-- メインビジュアル -->
     <section class="hero">
       <div class="hero__content">
@@ -192,7 +194,7 @@
           <div class="step__visual">
             <img loading="lazy" decoding="async" src="img/step-visual-2.webp" alt="マイページでポイントが貯まるアプリ画面" width="245" height="160">
           </div>
-          <p class="step__caption">受け取った日に、1日1回。<br class="pc-only">1件あたり最大22pt。</p>
+          <p class="step__caption">受け取った日に、1日1回。<br class="pc-only">1件あたり最大<span data-pt="maxPerSlip">22</span>pt。<br><a href="home_point.html" class="pm-link">今月・来月のポイントはこちら</a></p>
         </div>
         <div class="steps__arrow"><img loading="lazy" decoding="async" src="img/arrow-tri-2.svg" alt="" width="60" height="30"></div>
         <div class="step">
@@ -236,7 +238,7 @@
           <h3 class="merit-card__title"><span class="merit-card__em">荷物が届いた日に、</span>1日1回。</h3>
           <p class="merit-card__sub">
             <img loading="lazy" decoding="async" src="img/sparkle-1.webp" alt="" class="merit-card__sparkle" width="40" height="41">
-            <span class="merit-card__sub-text">年間<span class="merit-card__max">最大</span><span class="merit-card__key"><span class="num">8,000</span>円</span><br class="sp-only">相当のポイント</span>
+            <span class="merit-card__sub-text">年間<span class="merit-card__max">最大</span><span class="merit-card__key"><span class="num" data-pt="yearMax">8,000</span>円</span><br class="sp-only">相当のポイント</span>
             <img loading="lazy" decoding="async" src="img/sparkle-1.webp" alt="" class="merit-card__sparkle merit-card__sparkle--flip" width="40" height="41">
           </p>
           <div class="merit-card__chart">
@@ -275,7 +277,7 @@
           <div class="merit-card__visual merit-card__visual--friend">
             <img loading="lazy" decoding="async" src="img/merit-friend-1.webp" alt="紹介した人も紹介された友だちも、それぞれポイントがもらえる" width="480" height="141">
           </div>
-          <a href="https://toriiku-jp.com/home/friend.html" class="merit-card__link" target="_blank" rel="noopener">友だち紹介はこちら<img src="img/chevron-right.svg" alt="" class="merit-card__link-icon" width="6" height="10"></a>
+          <a href="friend.html" class="merit-card__link" target="_blank" rel="noopener">友だち紹介はこちら<img src="img/chevron-right.svg" alt="" class="merit-card__link-icon" width="6" height="10"></a>
         </div>
         <div class="merit-card merit-card--driver">
           <h3 class="merit-card__title"><span class="merit-card__em">ドライバーさん</span>も<span class="merit-card__tight">、</span>うれしい</h3>
@@ -428,7 +430,7 @@
               <div class="faq-item__a-inner">
                 <span class="faq-item__mark faq-item__mark--a">A.</span>
                 <p>日本国内の主要なポイント・ギフト券に交換できます。詳細は会員登録後のポイント画面でご確認できます。</p>
-                <p class="faq-item__link"><a href="https://toriiku-jp.com/home/home_point.html">ポイントの詳細はこちら</a></p>
+                <p class="faq-item__link"><a href="home_point.html">ポイントの詳細はこちら</a></p>
               </div>
             </div>
           </div>
@@ -442,7 +444,7 @@
               <div class="faq-item__a-inner">
                 <span class="faq-item__mark faq-item__mark--a">A.</span>
                 <p>ご利用受付から原則72時間以内に確定します。</p>
-                <p class="faq-item__link"><a href="https://toriiku-jp.com/home/home_point.html">ポイントの詳細はこちら</a></p>
+                <p class="faq-item__link"><a href="home_point.html">ポイントの詳細はこちら</a></p>
               </div>
             </div>
           </div>
@@ -540,5 +542,8 @@
 </div><!-- /.device -->
   <script src="js/script.js"></script>
   <script src="js/jitaku-toriiku-chatbot.js" defer></script>
+<script src="js/preview-asof.js"></script>
+<script src="js/points-month.js"></script>
+<script src="js/month-switch.js"></script>
 </body>
 </html>
