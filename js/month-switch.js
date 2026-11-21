@@ -32,25 +32,39 @@
   }
 
   // 2) トップ・お友だち紹介のページのお知らせ
-  function box(strong, linkText, href) {
-    return '<div style="max-width:960px;margin:12px auto;padding:12px 16px;background:#fff8e6;border:1px solid #f0c36d;border-radius:8px;font-size:14px;line-height:1.6;text-align:center;">' +
-      '<strong style="color:#8a5a00;">' + strong + '</strong>　' +
-      '<a href="' + href + '" style="color:#c0392b;font-weight:700;text-decoration:underline;">' + linkText + '</a></div>';
+  // お知らせの帯。色はサイトの決まりの色（style.css の :root の変数）だけを使う
+  function box(text, linkText, href) {
+    return '<div class="pm-banner"><span class="pm-banner__label">お知らせ</span>' +
+      '<span class="pm-banner__text">' + text + '</span>' +
+      '<a class="pm-banner__link" href="' + href + '">' + linkText + '</a></div>';
+  }
+  if (document.querySelector('[data-pt-banner]') && !document.getElementById('pm-banner-style')) {
+    var st = document.createElement('style');
+    st.id = 'pm-banner-style';
+    st.textContent =
+      '.pm-banner{max-width:60rem;margin:.75rem auto;padding:.75rem 1.25rem;background:var(--color-bg);border-radius:1.25rem;' +
+      'font-family:var(--font-base);font-size:.9375rem;font-weight:700;line-height:1.7;color:var(--color-text);text-align:center;word-break:auto-phrase;}' +
+      '.pm-banner__label{display:inline-block;margin-right:.5rem;padding:0 .625rem;border-radius:999px;background:var(--color-key);' +
+      'color:#fff;font-size:.75rem;line-height:1.7;vertical-align:.0625rem;}' +
+      '.pm-banner__link{display:inline-block;margin-left:.5rem;color:var(--color-key);text-decoration:underline;text-underline-offset:.2em;white-space:nowrap;}' +
+      '.pm-banner__link:hover{text-decoration:none;}' +
+      '@media (max-width:1099px){.pm-banner{margin:.75rem .9375rem;padding:.625rem 1rem;font-size:.8125rem;}}';
+    document.head.appendChild(st);
   }
   var banners = document.querySelectorAll('[data-pt-banner]');
   for (var b = 0; b < banners.length; b++) {
     var kind = banners[b].getAttribute('data-pt-banner'), html = '';
     if (kind === 'friend') {
       if (nxt && nxt.friend !== undefined && nxt.friend !== cur.friend) {
-        html = box('【お知らせ】' + nm + '月1日（' + wd + '）より、お友だち紹介のポイントが' + cur.friend + 'pt→' + nxt.friend + 'ptになります', '詳しくはこちら', 'home_point.html#next');
+        html = box(nm + '月1日（' + wd + '）より、お友だち紹介の特典が、それぞれ' + cur.friend + '円分から' + nxt.friend + '円分になります。', '詳しくはこちら', 'home_point.html#next');
       } else if (changedThisMonth && prev && prev.friend !== cur.friend) {
-        html = box(m + '月1日（' + wdCur + '）より、お友だち紹介のポイントが' + cur.friend + 'ptになりました', '詳しくはこちら', 'home_point.html');
+        html = box(m + '月1日（' + wdCur + '）より、お友だち紹介の特典が、それぞれ' + cur.friend + '円分になりました。', '詳しくはこちら', 'home_point.html');
       }
     } else {
       if (nxt && nxt.change) {
-        html = box('【お知らせ】' + nm + '月1日（' + wd + '）より、付与ポイントを改定します', '詳しくはこちら', 'home_point.html#next');
+        html = box(nm + '月1日（' + wd + '）より、付与ポイントを改定します。', '詳しくはこちら', 'home_point.html#next');
       } else if (changedThisMonth) {
-        html = box(m + '月1日（' + wdCur + '）より、付与ポイントを改定しました', '詳しくはこちら', 'home_point.html');
+        html = box(m + '月1日（' + wdCur + '）より、付与ポイントを改定しました。', '詳しくはこちら', 'home_point.html');
       }
     }
     banners[b].innerHTML = html;
@@ -65,12 +79,24 @@
     if (bm <= ym) curB = blocks[k];
     if (bm === nextYm) nextB = blocks[k];
   }
+  // 見出しの id（#rank など。css の .pt-head#rank の中央寄せにも使う）は、見えている欄に付け替える
+  function moveIds(toB) {
+    if (!toB) return;
+    var idHeads = document.querySelectorAll('.pm .pt-head[id]');
+    for (var x = 0; x < idHeads.length; x++) {
+      var hd = idHeads[x], blk = hd.closest('.pm');
+      if (blk === toB) continue;
+      var pos = Array.prototype.indexOf.call(blk.querySelectorAll('.pt-head'), hd);
+      var tgt = toB.querySelectorAll('.pt-head')[pos];
+      if (tgt && !tgt.id) { tgt.id = hd.id; hd.removeAttribute('id'); }
+    }
+  }
   var tabs = document.getElementById('pm-tabs');
   var tCur = document.getElementById('pm-tab-cur'), tNext = document.getElementById('pm-tab-next');
   var empty = document.getElementById('pm-empty'), notice = document.getElementById('pm-notice');
-  tCur.textContent = '今月（' + m + '月）のポイント';
-  tNext.textContent = '来月（' + nm + '月）のポイント';
-  if (nextB && nextB.getAttribute('data-change') === 'yes') tNext.insertAdjacentHTML('beforeend', '<span class="pm-badge">変更あり</span>');
+  var badge = (nextB && nextB.getAttribute('data-change') === 'yes') ? '<span class="pm-badge">変更あり</span>' : '';
+  tCur.innerHTML = '<span class="pm-tab-sub">今月</span>' + m + '月のポイント';
+  tNext.innerHTML = '<span class="pm-tab-sub">来月' + badge + '</span>' + nm + '月のポイント';
   tabs.hidden = false;
 
   function show(which) {
@@ -82,6 +108,7 @@
     if (isNext) {
       if (nextB) {
         nextB.hidden = false;
+        moveIds(nextB);
         if (nextB.getAttribute('data-nochange') === 'yes') {
           empty.textContent = nm + '月のポイントに変更はありません（' + m + '月と同じです）。';
           empty.hidden = false;
@@ -92,17 +119,18 @@
       }
     } else if (curB) {
       curB.hidden = false;
+      moveIds(curB);
     }
   }
   tCur.addEventListener('click', function () { show('cur'); if (location.hash === '#next') history.replaceState(null, '', location.pathname); });
   tNext.addEventListener('click', function () { show('next'); });
 
   if (nextB && nextB.getAttribute('data-change') === 'yes') {
-    notice.innerHTML = '【お知らせ】' + ny + '年' + nm + '月1日（' + wd + '）0:00より、付与ポイントを改定します。<a id="pm-go-next">' + nm + '月のポイントを見る</a>';
+    notice.innerHTML = '<span class="pt-revise-head">お知らせ</span><p>' + ny + '年' + nm + '月1日（' + wd + '）0:00より、付与ポイントを改定します。<a id="pm-go-next" href="#next">' + nm + '月のポイントを見る</a></p>';
     notice.hidden = false;
-    document.getElementById('pm-go-next').addEventListener('click', function () { show('next'); tabs.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    document.getElementById('pm-go-next').addEventListener('click', function (e) { e.preventDefault(); show('next'); tabs.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
   } else if (changedThisMonth) {
-    notice.textContent = y + '年' + m + '月1日（' + wdCur + '）より、付与ポイントを改定しました。以下は' + m + '月のポイントです。';
+    notice.innerHTML = '<span class="pt-revise-head">お知らせ</span><p>' + y + '年' + m + '月1日（' + wdCur + '）より、付与ポイントを改定しました。' + m + '月のポイントは、下の「今月」のタブでご覧いただけます。</p>';
     notice.hidden = false;
   }
 
