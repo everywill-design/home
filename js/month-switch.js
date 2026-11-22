@@ -131,7 +131,7 @@
       moveIds(curB);
     }
   }
-  tCur.addEventListener('click', function () { show('cur'); if (location.hash === '#next') history.replaceState(null, '', location.pathname); });
+  tCur.addEventListener('click', function () { show('cur'); if (location.hash === '#next') history.replaceState(null, '', location.pathname + location.search); });
   tNext.addEventListener('click', function () { show('next'); });
 
   if (nextB && nextB.getAttribute('data-change') === 'yes') {
