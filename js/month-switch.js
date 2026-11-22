@@ -1,6 +1,7 @@
 /*
   今月・来月の切り替え（日本時間で判定）
   - [data-pt="キー"] に、今月の数（js/points-month.js）を入れる
+  - <img data-pt-img="キー"> の絵を、今月の絵（js/points-month.js）に替える
   - [data-pt-banner="top|friend"] に、来月改定するとき・今月改定したときのお知らせを出す
   - home_point.html の .pm[data-month] を「今月のポイント」「来月のポイント」のタブにする
   このファイルは毎月直さない。
@@ -29,6 +30,13 @@
   for (var a = 0; a < nums.length; a++) {
     var v = cur[nums[a].getAttribute('data-pt')];
     if (v !== undefined && v !== null) nums[a].textContent = v;
+  }
+
+  // 1b) 絵を替える（数が描いてある絵。例：トップのお友だち紹介のカード）
+  var imgs = document.querySelectorAll('img[data-pt-img]');
+  for (var c = 0; c < imgs.length; c++) {
+    var src = cur[imgs[c].getAttribute('data-pt-img')];
+    if (src && imgs[c].getAttribute('src') !== src) imgs[c].setAttribute('src', src);
   }
 
   // 2) トップ・お友だち紹介のページのお知らせ

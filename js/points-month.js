@@ -8,13 +8,14 @@
   yearMax    : 「年間最大○円相当」の数。半端な数にせず幅で書く（須藤さん 11/22：例「7,000〜8,000」）。
                目安は「1回あたりの最大ポイント×365日」（11月 22pt→8,030円・12月 20pt→7,300円）が幅の中に入ること
   friend     : お友だち紹介のポイント（紹介した方・紹介されたお友だち、それぞれ）
+  friendImg  : トップのお友だち紹介のカードの絵（絵の中に friend の数が描いてある。数を変える月は絵も差し替える）
   change     : 前の月から変更点があるとき true
   changes    : 変更点の短い説明（記録用。画面には出さない）
 */
 window.TORIIKU_PT = {
-  "2026-11": { maxPerSlip: 22, yearMax: "7,000〜8,000", friend: 10 },
+  "2026-11": { maxPerSlip: 22, yearMax: "7,000〜8,000", friend: 10, friendImg: "img/merit-friend-1.webp" },
   "2026-12": {
-    maxPerSlip: 20, yearMax: "7,000〜8,000", friend: 30, change: true,
+    maxPerSlip: 20, yearMax: "7,000〜8,000", friend: 30, friendImg: "img/merit-friend-1-30pt.webp", change: true,
     changes: [
       "1回あたりの最大ポイント（会員ランク別）",
       "月利用回数ボーナス",
