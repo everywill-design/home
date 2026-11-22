@@ -301,6 +301,8 @@
 .pm-empty{margin-top:1.5rem;}
 .pm > .pt-head:first-child{margin-top:2rem;}
 .pm[hidden],[data-pt-hide]{display:none !important;}
+/* 日本語の折り返しを文節単位に（css/home_point.css の .pt-lead と同じ書き方。スマホで「ありま／す。」「ダイ／ヤモンド」のように切れないように） */
+.pt-apply,.pt-revise,.pt-head h2,.pt-eco-title{word-break:auto-phrase;line-break:strict;}
 </style>
 </head>
 <body>
