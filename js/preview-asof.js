@@ -20,4 +20,13 @@
     });
     document.body.appendChild(w);
   });
+  // 見本（htmlpreview）では、js があとから入れたリンク（お知らせの「詳しくはこちら」など）が raw のページ（HTML の中身の文字）に飛ぶので、見本の中のページに飛ばし直す
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var u = a.href;
+    if (u.indexOf('https://raw.githubusercontent.com/') === 0 && /\.html(#.*)?$/.test(u)) {
+      e.preventDefault();
+      location.href = 'https://htmlpreview.github.io/?' + u;
+    }
+  }, true);
 })();
