@@ -440,6 +440,7 @@
   </header>
 
   <main class="friend">
+    <div data-pt-banner="friend"></div>
     <div class="friend__inner">
 
       <!-- 冒頭バナー（画像） -->
@@ -463,14 +464,14 @@
         <div class="friend__reward friend__reward--main">
           <p class="friend__reward-role">紹介したあなたに</p>
           <p class="friend__reward-point">
-            <span class="friend__reward-num">10</span><span class="friend__reward-unit">円分</span>
+            <span class="friend__reward-num" data-pt="friend">10</span><span class="friend__reward-unit">円分</span>
           </p>
           <p class="friend__reward-cond">紹介したお友だちが、会員登録後に伝票提出まで完了すると進呈されます。</p>
         </div>
         <div class="friend__reward">
           <p class="friend__reward-role">紹介されたお友だちに</p>
           <p class="friend__reward-point">
-            <span class="friend__reward-num">10</span><span class="friend__reward-unit">円分</span>
+            <span class="friend__reward-num" data-pt="friend">10</span><span class="friend__reward-unit">円分</span>
           </p>
           <p class="friend__reward-cond">紹介コードを入力して会員登録し、伝票提出まで完了（以下のSTEP 01～03）すると進呈されます。</p>
         </div>
@@ -483,7 +484,7 @@
       <div class="friend__hero-section">
         <div class="friend__hero-text">
           <h2>自宅で受け取った荷物の伝票、<br>撮るだけでポイントに。</h2>
-          <p>面倒な手続きは一切なし。ネット通販等で購入し受取った荷物の伝票を撮って送るだけで、年間最大8,000円相当のポイントがたまる国内初のサービスです。</p>
+          <p>面倒な手続きは一切なし。ネット通販等で購入し受取った荷物の伝票を撮って送るだけで、年間最大<span data-pt="yearMax">7,000〜8,000</span>円相当のポイントがたまる国内初のサービスです。</p>
            <a href="https://takuhai-poc.jp/" target="_blank" rel="noopener">令和7～8年度：国土交通省・補助対象事業</a>
         </div>
         <img src="img/hero.webp" alt="受け取った伝票、撮るだけでポイントに。" class="friend__hero-image">
@@ -563,7 +564,7 @@
             </div>
             <ul class="friend__step-desc" style="list-style: none; padding: 0; margin: 0;">
               <li style="margin-bottom: 8px;">・自宅で受け取った荷物の<span class="accent">伝票をアプリで撮影して提出</span>します。</li>
-              <li>・伝票提出が完了した時点で、紹介した方・紹介されたお友だちの両方に10円分が即時進呈されます。</li>
+              <li>・伝票提出が完了した時点で、紹介した方・紹介されたお友だちの両方に<span data-pt="friend">10</span>円分が即時進呈されます。</li>
             </ul>
           </div>
         </div>
@@ -600,7 +601,7 @@
       <!-- 紹介者10pt追記 -->
       <p class="friend__referral-note">
         紹介されたお友だちも、<br class="sp-only">別のお友だちを紹介すると、<br>
-        次から<span class="under-yellow">紹介者として10pt×人数分</span>を<br class="sp-only">受け取れますのでぜひご紹介を！
+        次から<span class="under-yellow">紹介者として<span data-pt="friend">10</span>pt×人数分</span>を<br class="sp-only">受け取れますのでぜひご紹介を！
       </p>
 
       <!-- よくある質問 -->
@@ -722,7 +723,7 @@
 
         <div class="friend__terms">
           <ul>
-            <li><strong>【進呈条件】</strong>紹介されたお友だちが、紹介コードを入力した会員登録（メールアドレス認証を含む）と伝票提出を完了した時点で、紹介した方・紹介されたお友だちにそれぞれ10円分が進呈されます。</li>
+            <li><strong>【進呈条件】</strong>紹介されたお友だちが、紹介コードを入力した会員登録（メールアドレス認証を含む）と伝票提出を完了した時点で、紹介した方・紹介されたお友だちにそれぞれ<span data-pt="friend">10</span>円分が進呈されます。</li>
             <li><strong>【ポイントの付与時期】</strong>条件達成後、即時反映されます。</li>
             <li>紹介キャンペーンコードは自宅deトリイクと、トリイクスポットと同様のコードとなり、両サービスでご利用いただけます。</li>
             <li>紹介されたお友だちは、これまでにトリイクスポット・自宅deトリイクに登録がない方に限ります（新規ユーザー様限定）。</li>
@@ -778,5 +779,7 @@
 <!-- FAQアコーディオン動作用 JavaScript -->
 <script src="js/script.js"></script>
 
+<script src="js/points-month.js"></script>
+<script src="js/month-switch.js"></script>
 </body>
 </html>

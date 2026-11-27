@@ -285,6 +285,24 @@
   margin:0 0 16px;
   text-align:left;
 }
+
+/* ============================================================
+   今月・来月のポイント（いつも同じ住所のページ。毎月は月ごとの欄だけを直す）
+   ============================================================ */
+.pm-tabs{display:flex;gap:.5rem;margin:4rem 0 0;border-bottom:3px solid var(--pt-key);}
+.pm-tabs button{flex:1 1 0;min-width:0;min-height:3.75rem;padding:.5rem .5rem .625rem;border:1px solid var(--pt-line);border-bottom:0;border-radius:var(--pt-radius) var(--pt-radius) 0 0;background:var(--pt-bg);color:var(--pt-muted);font-family:var(--font-base,"Zen Kaku Gothic New",sans-serif);font-size:1rem;font-weight:700;line-height:1.4;cursor:pointer;}
+.pm-tabs button[aria-selected="true"]{background:var(--pt-key);border-color:var(--pt-key);color:#fff;}
+.pm-tabs button:focus-visible{outline:2px solid var(--pt-key);outline-offset:3px;}
+.pm-tab-sub{display:block;font-size:.75rem;font-weight:500;}
+.pm-badge{display:inline-block;margin-left:.375rem;padding:0 .5rem;border-radius:999px;background:var(--pt-yellow);color:var(--pt-ink);font-size:.6875rem;font-weight:700;line-height:1.6;vertical-align:.0625rem;}
+.pm-notice{max-width:720px;margin:0 auto 28px;}
+.pt-revise a{color:var(--pt-key);font-weight:700;text-decoration:underline;text-underline-offset:.2em;cursor:pointer;}
+.pt-revise a:hover{color:var(--pt-key-dark);}
+.pm-empty{margin-top:1.5rem;}
+.pm > .pt-head:first-child{margin-top:2rem;}
+.pm[hidden],[data-pt-hide]{display:none !important;}
+/* 日本語の折り返しを文節単位に（css/home_point.css の .pt-lead と同じ書き方。スマホで「ありま／す。」「ダイ／ヤモンド」のように切れないように） */
+.pt-apply,.pt-revise,.pt-head h2,.pt-eco-title{word-break:auto-phrase;line-break:strict;}
 </style>
 </head>
 <body>
@@ -311,9 +329,12 @@
     </p>
 
     <p class="pt-apply">
-      本ページに掲示しているポイント数は、<strong>2026年11月1日から適用</strong>するものです。<br>
-      ポイント数および1か月あたりの上限は、利用規約第12条にもとづき<strong>毎月1日付で改定</strong>する場合があります。
+      ポイント数および1か月あたりの上限は、利用規約第12条にもとづき<strong>毎月1日付で改定</strong>する場合があります。<br>
+      翌月のポイント数は、毎月末日までにこのページの「来月のポイント」でお知らせします。
     </p>
+
+    <div class="pt-revise pm-notice" id="pm-notice" hidden></div>
+
 
     <section class="pt-box">
      <div class="pt-flow" aria-label="ポイント還元の流れ">
@@ -420,6 +441,17 @@
       <li>トリイクポイントの有効期限は、獲得した月から6ヶ月目の月末日までとします。</li>
     </ul>
     </section>
+
+    <div id="pm-area"></div>
+    <div class="pm-tabs" id="pm-tabs" role="tablist" aria-label="今月と来月のポイント" hidden>
+      <button type="button" role="tab" id="pm-tab-cur" aria-controls="pm-area" aria-selected="true">今月のポイント</button>
+      <button type="button" role="tab" id="pm-tab-next" aria-controls="pm-area" aria-selected="false">来月のポイント</button>
+    </div>
+    <p class="pt-apply pm-empty" id="pm-empty" hidden></p>
+
+    <!-- ===== 2026年11月のポイント（ここから） ===== -->
+    <div class="pm" data-month="2026-11">
+    <div class="pt-head"><h2>2026年11月のポイント<small>適用期間：2026年11月1日（日）〜11月30日（月）</small></h2></div>
 
     <section class="pt-box">
     <div class="pt-head" id="rank">
@@ -604,7 +636,7 @@
     <div class="pt-first">
       <div class="pt-revise">
         <span class="pt-revise-head">2026年11月1日 改定</span>
-        <p>初回利用者ボーナスを <strong>100pt → 20pt</strong> に変更します。</p>
+        <p>初回利用者ボーナスを <strong>100pt → 20pt</strong> に変更しました。</p>
       </div>
       <p class="pt-first-label">初回利用者</p>
       <p class="pt-first-cond">初回のご利用で付与</p>
@@ -660,7 +692,7 @@
 
     <div class="pt-revise">
       <span class="pt-revise-head">2026年11月1日 改定</span>
-      <p>提出箇所数ごとの付与ポイントを変更します。3箇所：<strong>100pt → 10pt</strong>、5箇所：<strong>130pt → 20pt</strong>、7箇所（10箇所に変更）：<strong>180pt → 50pt</strong>。</p>
+      <p>提出箇所数ごとの付与ポイントを変更しました。3箇所：<strong>100pt → 10pt</strong>、5箇所：<strong>130pt → 20pt</strong>、7箇所（10箇所に変更）：<strong>180pt → 50pt</strong>。</p>
     </div>
 
     <ul class="pt-spot">
@@ -686,6 +718,277 @@
       <li>トリイクスポットについて詳しくは、<a href="https://toriiku-jp.com/" target="_blank" rel="noopener">トリイク公式サイト</a>をご覧ください。</li>
     </ul>
     </section>
+    </div>
+    <!-- ===== 2026年11月のポイント（ここまで） ===== -->
+
+    <!-- ===== 2026年12月のポイント（ここから） ===== -->
+    <div class="pm" data-month="2026-12" data-change="yes">
+    <div class="pt-head"><h2>2026年12月のポイント<small>適用期間：2026年12月1日（火）〜12月31日（木）</small></h2></div>
+    <div class="pt-revise">
+      <span class="pt-revise-head">11月からの変更点</span>
+      <p>・1回あたりの最大ポイント（会員ランク別）：ダイヤモンド 22→<strong>20pt</strong>／プラチナ 18→<strong>12pt</strong>／ゴールド 14→<strong>8pt</strong>／シルバー 11→<strong>6pt</strong>／ブロンズ 8→<strong>5pt</strong>／スタンダード 6→<strong>4pt</strong>／エントリー 6→<strong>4pt</strong></p>
+      <p>・加算の項目「置き配」は「多様な受け取り（置き配・宅配BOXなど）」に変わります。</p>
+      <p>・月利用回数ボーナス：8回目 100→<strong>10pt</strong>／15回目 50→<strong>20pt</strong></p>
+      <p>・お友だち紹介のポイント：紹介した方・紹介されたお友だち、それぞれ 10→<strong>30pt</strong>（<a href="friend.html">お友だち紹介のページ</a>）</p>
+    </div>
+    <section class="pt-box">
+    <div class="pt-head">
+      <h2>会員ランク別の付与ポイント<small>直近6ヶ月間の累積利用回数で判定します</small></h2>
+    </div>
+
+    <div class="pt-table-wrap">
+      <table class="pt-table pt-table--num">
+        <thead>
+          <tr>
+            <th scope="col">会員ランク</th>
+            <th scope="col">適用条件<span class="pt-th-sub">直近6ヶ月間の累積利用回数</span></th>
+            <th scope="col">基本付与<span class="pt-th-sub">1回あたり</span></th>
+            <th scope="col" class="pt-col-max">1回あたり最大<span class="pt-th-sub">加算をすべて満たした場合</span></th>
+            <th scope="col">1か月あたりの上限</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-entry">エントリー</span></th>
+            <td class="pt-cond">会員登録のみ</td>
+            <td><span class="pt-num">1</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">4</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">40</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-standard">スタンダード</span></th>
+            <td class="pt-cond">累積1回利用</td>
+            <td><span class="pt-num">1</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">4</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">60</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-bronze">ブロンズ</span></th>
+            <td class="pt-cond">累積10回利用</td>
+            <td><span class="pt-num">2</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">5</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">90</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-silver">シルバー</span></th>
+            <td class="pt-cond">累積25回利用</td>
+            <td><span class="pt-num">2</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">6</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">130</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-gold">ゴールド</span></th>
+            <td class="pt-cond">累積45回利用</td>
+            <td><span class="pt-num">3</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">8</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">180</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-platinum">プラチナ</span></th>
+            <td class="pt-cond">累積75回利用</td>
+            <td><span class="pt-num">5</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">12</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">240</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-diamond">ダイヤモンド</span></th>
+            <td class="pt-cond">累積120回利用</td>
+            <td><span class="pt-num">9</span><span class="pt-unit">pt</span></td>
+            <td class="pt-col-max"><span class="pt-num">20</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">320</span><span class="pt-unit">pt</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="pt-notes">
+      <li>「基本付与」は、送り状の写真を提出し簡易アンケートに回答した1回につき付与されるポイントです。</li>
+      <li>「1回あたり最大」は、基本付与に加えて、後述の「物流にやさしい受け取り方」および任意アンケートの加算をすべて満たした場合の合計です。実際の付与ポイントは回答内容により異なります。</li>
+      <li>会員ランクは、直近6ヶ月間の「1回の利用」の累積回数により決定します。</li>
+      <li>「1回の利用」とは、受け取った荷物の送り状の写真を本アプリで提出し、簡易アンケートに回答することをいいます。</li>
+      <li>会員ランクは定期的に見直します。直近6ヶ月間の利用回数が基準を下回った場合、会員ランクは下位の区分に変更されます。この場合、変更の実施前に本アプリで通知します。</li>
+      <li>1か月あたりの上限は、月利用回数ボーナス・出店要望箇所ボーナスを含めた、その月に付与されるトリイクポイントの合計に適用されます。</li>
+    </ul>
+    </section>
+
+    <section class="pt-box">
+    <div class="pt-head">
+      <h2>物流にやさしい受け取り方で、さらに加算<small>送り状の撮影後に届くアンケートで、当てはまるものをお答えください</small></h2>
+    </div>
+
+    <ul class="pt-eco">
+      <li class="pt-eco-card">
+        <p class="pt-eco-title">再配達なし</p>
+        <p class="pt-eco-text">一度で受け取れると、ドライバーが同じ家を二度訪れずに済みます。</p>
+      </li>
+      <li class="pt-eco-card">
+        <p class="pt-eco-title">多様な受け取り（置き配・宅配BOXなど）</p>
+        <p class="pt-eco-text">対面で受け取らなくてよいので、配達が一度で完了します。</p>
+      </li>
+      <li class="pt-eco-card">
+        <p class="pt-eco-title">ゆっくり配送</p>
+        <p class="pt-eco-text">急がない荷物はまとめて運べるので、トラックの数が減ります。</p>
+      </li>
+    </ul>
+
+    <p class="pt-subhead">会員ランク別の加算ポイント<span class="pt-subhead-note">基本付与に上乗せして付与されます</span></p>
+
+    <div class="pt-table-wrap">
+      <table class="pt-table pt-table--num">
+        <thead>
+          <tr>
+            <th scope="col">会員ランク</th>
+            <th scope="col">再配達なし</th>
+            <th scope="col">多様な受け取り<span class="pt-th-sub">置き配・宅配BOXなど</span></th>
+            <th scope="col">ゆっくり配送</th>
+            <th scope="col">任意アンケート</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-entry">エントリー</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">0</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-standard">スタンダード</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">0</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-bronze">ブロンズ</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">0</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-silver">シルバー</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">0</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-gold">ゴールド</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">0</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-platinum">プラチナ</span></th>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+3</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+          </tr>
+          <tr>
+            <th scope="row"><span class="pt-badge pt-badge-diamond">ダイヤモンド</span></th>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+6</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+1</span><span class="pt-unit">pt</span></td>
+            <td><span class="pt-num">+2</span><span class="pt-unit">pt</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <ul class="pt-notes">
+      <li>上記の加算は、基本付与に上乗せして付与されます。</li>
+      <li>「任意アンケート」は、再配達・置き配・ゆっくり配送以外の設問にお答えいただいた場合の加算です。</li>
+      <li>加算の対象となるのはアンケートでのご回答です。配送時のご指定そのものが対象となるわけではありません。</li>
+    </ul>
+    </section>
+
+    <!-- ===== 初回利用者ボーナス（新規追加） ===== -->
+    <section class="pt-box">
+    <div class="pt-head">
+      <h2>初回利用者ボーナス<small>はじめてご利用いただく方が対象です</small></h2>
+    </div>
+
+    <div class="pt-first">
+      <p class="pt-first-label">初回利用者</p>
+      <p class="pt-first-cond">初回のご利用で付与</p>
+      <span class="pt-first-pt">20<span class="pt-unit">pt</span></span>
+      <p class="pt-first-note">※モニターキャンペーン対象外の方に適用します。</p>
+    </div>
+
+    <ul class="pt-notes">
+      <li>初回利用者ボーナスは、初回の「1回の利用」に対して1回限り付与します。</li>
+      <li>モニターキャンペーンの対象となる方には適用されません。</li>
+    </ul>
+    </section>
+
+    <section class="pt-box">
+    <div class="pt-head">
+      <h2>月利用回数ボーナス<small>単月の利用回数に応じて追加付与します</small></h2>
+    </div>
+
+    <ul class="pt-bonus">
+      <li class="pt-bonus-card">
+        <span class="pt-bonus-badge pt-bonus-badge-1">8回目ボーナス</span>
+        <p class="pt-bonus-cond">単月で8回利用</p>
+        <span class="pt-bonus-pt">10<span class="pt-unit">pt</span></span>
+      </li>
+      <li class="pt-bonus-card">
+        <span class="pt-bonus-badge pt-bonus-badge-2">15回目ボーナス</span>
+        <p class="pt-bonus-cond">単月で15回利用</p>
+        <span class="pt-bonus-pt">20<span class="pt-unit">pt</span></span>
+      </li>
+    </ul>
+
+    <p class="pt-total">
+      単月で15回ご利用いただいた場合、ボーナスは合計<span class="pt-total-num">30</span>pt
+    </p>
+
+    <ul class="pt-notes">
+      <li>月利用回数ボーナスは、単月（毎月1日〜末日）の利用回数で判定し、達成した月に付与されます。</li>
+      <li>「1回の利用」の数え方は会員ランクと同じく、送り状の写真を本アプリで提出し、簡易アンケートに回答することをいいます。</li>
+      <li>会員ランクの累積回数（直近6ヶ月間）とは独立して集計します。</li>
+      <li>月利用回数ボーナスを含めても、1か月あたりに付与されるトリイクポイントの上限を超えて付与されることはありません。</li>
+    </ul>
+    </section>
+
+    <section class="pt-box">
+    <div class="pt-head">
+      <h2>出店要望箇所ボーナス<small>トリイクスポットを設置してほしい場所を教えてください</small></h2>
+    </div>
+
+    <p class="pt-spot-lead">
+      トリイクスポットは、商業施設や公共施設の中に設置された、安心・安全な荷物の受取スポットです。お住まいの近くにスポットができれば、ご自宅で荷物を待つ必要そのものが減ります。<br>
+      「ここにあったら便利」と思う場所をアプリから教えていただくと、提出いただいた箇所数に応じてトリイクポイントが加算されます。
+    </p>
+
+    <ul class="pt-spot">
+      <li class="pt-spot-card">
+        <span class="pt-spot-num">3</span><span class="pt-spot-unit">箇所提出</span>
+        <span class="pt-spot-pt">10pt</span>
+      </li>
+      <li class="pt-spot-card">
+        <span class="pt-spot-num">5</span><span class="pt-spot-unit">箇所提出</span>
+        <span class="pt-spot-pt">20pt</span>
+      </li>
+      <li class="pt-spot-card">
+        <span class="pt-spot-num">10</span><span class="pt-spot-unit">箇所提出</span>
+        <span class="pt-spot-pt">50pt</span>
+      </li>
+    </ul>
+
+    <ul class="pt-notes">
+      <li>上記は、提出いただいた箇所数ごとの<strong>累計</strong>の付与ポイントです。3箇所で10pt、5箇所まで提出すると合計20pt、10箇所まで提出すると合計50ptとなります。</li>
+      <li>出店要望箇所ボーナスは、本アプリにご登録の住所につき<strong>1回限り</strong>の付与です。</li>
+      <li>不備なく規定の箇所数をご提出いただいた場合に付与されます。</li>
+      <li>11箇所目以降のご提出については、ポイントは付与されません。</li>
+      <li>トリイクスポットについて詳しくは、<a href="https://toriiku-jp.com/" target="_blank" rel="noopener">トリイク公式サイト</a>をご覧ください。</li>
+    </ul>
+    </section>
+    </div>
+    <!-- ===== 2026年12月のポイント（ここまで） ===== -->
 
     <div class="pt-detail">
       <p>本サービス、および各種ポイント付与に関する詳細な条件やルールにつきましては、<a href="https://toriiku-jp.com/terms.html#home">利用規約</a>をご確認ください。</p>
@@ -732,5 +1035,7 @@
 
 </div>
 
+<script src="js/points-month.js"></script>
+<script src="js/month-switch.js"></script>
 </body>
 </html>
